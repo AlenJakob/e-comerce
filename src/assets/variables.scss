@@ -1,1 +1,39 @@
-$c-red: red
+$c-red: red;
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+$mq-mobile: 375px;
+$mq-desktop: 1440px;
+
+// ## Colors
+
+// ### Primary
+
+$c-orange: hsl(26, 100%, 55%);
+$c-pale-orange: hsl(25, 100%, 94%);
+
+// ### Neutral
+
+$c-very-dark-blue: hsl(220, 13%, 13%);
+$c-dark-grayish-blue: hsl(219, 9%, 45%);
+$c-grayish-blue: hsl(220, 14%, 75%);
+$c-light-gray-blue: hsl(223, 64%, 98%);
+$c-white: hsl(0, 0%, 100%);
+$c-black: hsl(0, 0%, 0%);
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size (paragraph): 16px
+
+// ### Font
+$font-family: "Kumbh Sans", sans-serif;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
