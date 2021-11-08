@@ -54,7 +54,6 @@ export default {
   display: flex;
   align-items: center;
   min-height: 60px;
-  padding: 0 1rem;
   &__logo {
     margin-right: 3rem;
   }
