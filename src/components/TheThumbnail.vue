@@ -1,30 +1,27 @@
 <template>
   <img
     class="the-thumbnail__img"
-    :class="{ active: id === img.id }"
-    :src="require(`../assets/img/${img.thumb}.jpg`)"
-    @click="getImage(img)"
+    :class="{ active: id === props.img.id }"
+    :src="require(`../assets/img/${props.img.thumb}.jpg`)"
+    @click="getImage(props.img)"
   />
 </template>
 
-<script>
-export default {
-  props: {
-    img: {
-      type: Object,
-      default: () => ({}),
-    },
-    id: {
-      type: Number,
-      default: 0,
-    },
+<script setup>
+import { defineProps, defineEmits } from "vue";
+const props = defineProps({
+  img: {
+    type: Object,
+    default: () => ({}),
   },
-  methods: {
-    getImage(img) {
-      this.$emit("set-image", img);
-    },
+  id: {
+    type: Number,
+    default: 0,
   },
-  computed: {},
+});
+const emit = defineEmits(["set-image"]);
+const getImage = (img) => {
+  emit("set-image", img);
 };
 </script>
 

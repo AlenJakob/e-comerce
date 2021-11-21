@@ -21,37 +21,29 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TheThumbnail from "@/components/TheThumbnail";
+import { ref, defineProps, defineEmits } from "vue";
+const props = defineProps({
+  images: {
+    type: Array,
+    default: () => [],
+  },
+});
+const currentImg = ref(props.images[0].img);
+// const isActive = ref(false);
+const activeItem = ref(0);
 
-export default {
-  components: {
-    TheThumbnail,
-  },
-  props: {
-    images: {
-      type: Array,
-      default: () => [],
-    },
-  },
-  data() {
-    return {
-      currentImg: this.images[0].img,
-      isActive: false,
-      activeItem: 0,
-    };
-  },
-  methods: {
-    setImage(item) {
-      this.currentImg = item.img;
-    },
-    setActiveClass(i) {
-      this.activeItem = i;
-    },
-    emitIsOpen() {
-      this.$emit("open-gallery");
-    },
-  },
+const emit = defineEmits(["open-gallery"]);
+
+const setImage = (item) => {
+  currentImg.value = item.img;
+};
+const setActiveClass = (i) => {
+  activeItem.value = i;
+};
+const emitIsOpen = () => {
+  emit("open-gallery");
 };
 </script>
 
