@@ -22,65 +22,52 @@
   </div>
 </template>
 
-<script>
-//  :is-open="isOpen"
-
+<script setup>
 // @ is an alias to /src
 import TheBox from "@/components/TheBox/TheBox.vue";
 import TheGallery from "@/components/TheGallery";
 import MainGallery from "@/components/ui/MainGallery";
 import TheProduct from "@/components/TheProduct.vue";
-
-export default {
-  name: "Home",
-
-  components: { TheBox, TheGallery, TheProduct, MainGallery },
-  data() {
-    return {
-      isOpen: false,
-      product: {
-        description: {
-          manufactures: "Sneaker Company",
-          title: "Fall Limiteles Sneakers",
-          description:
-            "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer",
-          regularPrice: "250.00 ",
-          discount: "50",
-        },
-        images: [
-          {
-            id: 1,
-            img: "image-product-1",
-            thumb: "image-product-1-thumbnail",
-            alt: "shoes product",
-          },
-          {
-            id: 2,
-            img: "image-product-2",
-            thumb: "image-product-2-thumbnail",
-            alt: "shoes product",
-          },
-          {
-            id: 3,
-            img: "image-product-3",
-            thumb: "image-product-3-thumbnail",
-            alt: "shoes product",
-          },
-          {
-            id: 4,
-            img: "image-product-4",
-            thumb: "image-product-4-thumbnail",
-            alt: "shoes product",
-          },
-        ],
-      },
-    };
+import { ref } from "vue";
+const isOpen = ref(false);
+const product = ref({
+  description: {
+    manufactures: "Sneaker Company",
+    title: "Fall Limiteles Sneakers",
+    description:
+      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer",
+    regularPrice: "250.00 ",
+    discount: "50",
   },
-  methods: {
-    manageGallery() {
-      this.isOpen = !this.isOpen;
+  images: [
+    {
+      id: 1,
+      img: "image-product-1",
+      thumb: "image-product-1-thumbnail",
+      alt: "shoes product",
     },
-  },
+    {
+      id: 2,
+      img: "image-product-2",
+      thumb: "image-product-2-thumbnail",
+      alt: "shoes product",
+    },
+    {
+      id: 3,
+      img: "image-product-3",
+      thumb: "image-product-3-thumbnail",
+      alt: "shoes product",
+    },
+    {
+      id: 4,
+      img: "image-product-4",
+      thumb: "image-product-4-thumbnail",
+      alt: "shoes product",
+    },
+  ],
+});
+const manageGallery = () => {
+  isOpen.value = !isOpen.value;
 };
 </script>
 

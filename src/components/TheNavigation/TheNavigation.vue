@@ -31,18 +31,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import consts from "@/services/index";
-import SHOES_COLLECTION from "@/services/collections/index";
-
-export default {
-  data() {
-    return { consts, SHOES_COLLECTION };
-  },
-  mounted() {
-    console.log(SHOES_COLLECTION);
-  },
-};
+import { onMounted } from "vue";
+onMounted(() => {
+  console.log("TESTF");
+});
 </script>
 
 <style lang="scss" scoped>
