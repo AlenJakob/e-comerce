@@ -101,7 +101,7 @@ body {
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
-  height: 200vh;
+  height: 100vh;
   min-width: 100vh;
 }
 
@@ -116,7 +116,7 @@ body {
     transform: translate(-50%, -50%) scale(0);
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.1);
   }
   100% {
     transform: translate(-50%, -50%) scale(1);

@@ -8,6 +8,7 @@
 <style lang="scss" scoped>
 .the-box {
   display: flex;
+  gap: 20px;
   padding: 2rem 4rem;
   margin-top: 2rem;
 }

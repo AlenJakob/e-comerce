@@ -33,8 +33,8 @@ export default {
   margin-right: 8px;
   object-fit: contain;
   border-radius: 4px;
-  width: 54px;
-  height: 54px;
+  width: 94px;
+  height: 94px;
   &:hover {
     opacity: 0.8;
     cursor: pointer;
@@ -42,6 +42,9 @@ export default {
   &:active {
     opacity: 0.7;
     cursor: pointer;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 }
 .active {

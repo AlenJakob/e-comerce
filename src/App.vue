@@ -22,7 +22,7 @@ export default {
 }
 .app {
   max-width: 1440px;
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
 }
 </style>

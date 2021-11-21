@@ -67,7 +67,7 @@ export default {
 // Optional Theme Stylesheet
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 .glide {
-  width: 800px;
+  width: 600px;
   margin: 0 auto;
   position: absolute;
   left: 50%;

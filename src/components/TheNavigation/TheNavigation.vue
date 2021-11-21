@@ -10,7 +10,7 @@
     ></span>
     <nav class="the-navigation__menu">
       <router-link
-        v-for="link in categories"
+        v-for="link in consts.MENU_CATEGORIES"
         :key="link.id"
         :to="link.path"
         class="the-navigation__menu-link"
@@ -32,17 +32,12 @@
 </template>
 
 <script>
+// import { MENU_CATEGORIES } from "@/services/menu/index";
+import consts from "@/services/menu/index";
+
 export default {
   data() {
-    return {
-      categories: [
-        { id: 1, name: "Collections", path: "/collections" },
-        { id: 2, name: "Men", path: "/men" },
-        { id: 3, name: "Women", path: "/women" },
-        { id: 4, name: "About", path: "/about" },
-        { id: 5, name: "Contact", path: "/contact" },
-      ],
-    };
+    return { consts };
   },
 };
 </script>

@@ -49,7 +49,6 @@ export default {
       this.activeItem = i;
     },
     emitIsOpen() {
-      console.log("emit");
       this.$emit("open-gallery");
     },
   },
@@ -72,8 +71,8 @@ export default {
   cursor: pointer;
 
   &__image {
-    width: 240px;
-    height: 240px;
+    width: 400px;
+    height: 400px;
     border-radius: 4px;
     margin-bottom: 8px;
   }
