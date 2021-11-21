@@ -1,5 +1,15 @@
-import * as KIDS_COLLECTION from "./kids_collection";
-import * as MEN_COLLECTION from "./men_collection";
-import * as WOMEN_COLLECTION from "./women_collection";
+// import axios from "axios";
 
-export default { KIDS_COLLECTION, MEN_COLLECTION, WOMEN_COLLECTION };
+// async function fetchCollection() {
+//   return await axios
+//     .get("https://github.com/Stupidism/goat-sneakers/blob/master/api.json")
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// }
+import SHOES_COLLECTION from "./SHOES_COLLECTION";
+
+export default SHOES_COLLECTION;

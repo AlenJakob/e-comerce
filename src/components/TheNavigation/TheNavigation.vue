@@ -33,11 +33,14 @@
 
 <script>
 import consts from "@/services/index";
-import collection from "@/services/collections/index";
+import SHOES_COLLECTION from "@/services/collections/index";
 
 export default {
   data() {
-    return { consts, collection };
+    return { consts, SHOES_COLLECTION };
+  },
+  mounted() {
+    console.log(SHOES_COLLECTION);
   },
 };
 </script>
