@@ -2,7 +2,6 @@
   <div>
     <img
       class="the-thumbnail__img"
-      :class="{ active: activeIndex === props.index }"
       :src="props.item.img"
       @click="getImage(props.item)"
     />

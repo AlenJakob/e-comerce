@@ -2,11 +2,12 @@
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        <li class="glide__slide" v-for="(img, index) in images" :key="index">
-          <img
-            class="glide__slide-img"
-            :src="require(`../../assets/img/${img.img}.jpg`)"
-          />
+        <li
+          class="glide__slide"
+          v-for="(item, index) in props.images"
+          :key="index"
+        >
+          <img class="glide__slide-img" :src="item.img" />
         </li>
       </ul>
       <div class="glide__arrows" data-glide-el="controls">
@@ -19,7 +20,7 @@
       </div>
       <div class="glide__bullets" data-glide-el="controls[nav]">
         <button
-          v-for="i in images.length"
+          v-for="i in props.images.length"
           :key="i"
           class="glide__bullet"
           data-glide-dir="=0"
@@ -29,35 +30,30 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Glide, { Controls, Breakpoints } from "@glidejs/glide/dist/glide.esm";
+import { onMounted, defineProps } from "vue";
+const props = defineProps({
+  images: {
+    type: Array,
+    default: () => [],
+  },
+});
 
-export default {
-  props: {
-    images: {
-      type: Array,
-      default: () => [],
-    },
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  async mounted() {
-    const glide = await new Glide(".glide", {
-      Controls,
-      Breakpoints,
-      gap: 0,
-      perView: 1,
-      startAt: 0,
-      focusAt: "center",
-      type: "carousel",
-      autoplay: 0,
-      animationDuration: 600,
-    });
-    glide.mount();
-  },
-};
+onMounted(async () => {
+  const glide = await new Glide(".glide", {
+    Controls,
+    Breakpoints,
+    gap: 0,
+    perView: 1,
+    startAt: 0,
+    focusAt: "center",
+    type: "carousel",
+    autoplay: 0,
+    animationDuration: 600,
+  });
+  glide.mount();
+});
 </script>
 
 <style lang="scss" scoped>

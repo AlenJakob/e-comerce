@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Colellection site</h1>
-
     <the-box v-for="item in shoesCollection" :key="item">
       <template v-slot:gallery>
         <the-gallery

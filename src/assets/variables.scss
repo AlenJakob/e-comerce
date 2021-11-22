@@ -36,4 +36,8 @@ $font-family: "Kumbh Sans", sans-serif;
 $fw-regular: 400;
 $fw-bold: 700;
 
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+.overlay.hide-outside {
+  overflow: hidden;
+}
