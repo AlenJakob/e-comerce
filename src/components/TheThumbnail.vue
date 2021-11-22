@@ -1,34 +1,38 @@
 <template>
-  <img
-    class="the-thumbnail__img"
-    :class="{ active: id === props.img.id }"
-    :src="require(`../assets/img/${props.img.thumb}.jpg`)"
-    @click="getImage(props.img)"
-  />
+  <div>
+    <img
+      class="the-thumbnail__img"
+      :class="{ active: activeIndex === props.index }"
+      :src="props.item.img"
+      @click="getImage(props.item)"
+    />
+  </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from "vue";
 const props = defineProps({
-  img: {
+  item: {
     type: Object,
     default: () => ({}),
   },
-  id: {
+  index: {
     type: Number,
     default: 0,
   },
 });
+
 const emit = defineEmits(["set-image"]);
-const getImage = (img) => {
+const getImage = ({ img }) => {
   emit("set-image", img);
 };
 </script>
 
 <style lang="scss" scoped>
 .the-thumbnail__img {
+  padding: 2px;
   margin-right: 8px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 4px;
   width: 94px;
   height: 94px;
@@ -43,9 +47,5 @@ const getImage = (img) => {
   &:last-child {
     margin-right: 0;
   }
-}
-.active {
-  box-shadow: 0 0 0 2px $c-orange;
-  filter: grayscale(60%);
 }
 </style>

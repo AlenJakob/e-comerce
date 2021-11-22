@@ -3,17 +3,19 @@
     <div>
       <img
         class="the-gallery__image"
-        :src="require(`../assets/img/${currentImg}.jpg`)"
+        :src="currentImg"
         :alt="images[0].url"
         @click="emitIsOpen"
       />
     </div>
     <div class="thumbnail">
       <the-thumbnail
-        v-for="(img, i) in images"
+        v-for="(item, i) in thumbnails"
+        :key="item.id"
+        :index="i"
+        class="thumbnail__img"
         :class="{ active: i === activeItem }"
-        :key="img.id"
-        :img="img"
+        :item="item"
         @set-image="setImage"
         @click="setActiveClass(i)"
       ></the-thumbnail>
@@ -29,7 +31,12 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  thumbnails: {
+    type: Array,
+    default: () => [],
+  },
 });
+
 const currentImg = ref(props.images[0].img);
 // const isActive = ref(false);
 const activeItem = ref(0);
@@ -37,9 +44,10 @@ const activeItem = ref(0);
 const emit = defineEmits(["open-gallery"]);
 
 const setImage = (item) => {
-  currentImg.value = item.img;
+  currentImg.value = item;
 };
 const setActiveClass = (i) => {
+  console.log(i);
   activeItem.value = i;
 };
 const emitIsOpen = () => {
@@ -56,6 +64,10 @@ const emitIsOpen = () => {
 .thumbnail {
   display: flex;
   flex: 1;
+  gap: 10px;
+}
+.thumbnail__img {
+  border: 3px dashed transparent;
 }
 .the-gallery {
   position: relative;
@@ -63,10 +75,15 @@ const emitIsOpen = () => {
   cursor: pointer;
 
   &__image {
+    object-fit: cover;
     width: 400px;
     height: 400px;
     border-radius: 4px;
     margin-bottom: 8px;
   }
+}
+
+.active {
+  border-color: $c-orange;
 }
 </style>

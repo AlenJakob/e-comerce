@@ -26,8 +26,8 @@
 // @ is an alias to /src
 import TheBox from "@/components/TheBox/TheBox.vue";
 import TheGallery from "@/components/TheGallery";
-import MainGallery from "@/components/ui/MainGallery";
 import TheProduct from "@/components/TheProduct.vue";
+import MainGallery from "@/components/ui/MainGallery";
 import { ref } from "vue";
 const isOpen = ref(false);
 const product = ref({

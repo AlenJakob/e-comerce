@@ -33,10 +33,6 @@
 
 <script setup>
 import consts from "@/services/index";
-import { onMounted } from "vue";
-onMounted(() => {
-  console.log("TESTF");
-});
 </script>
 
 <style lang="scss" scoped>
