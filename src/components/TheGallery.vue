@@ -9,6 +9,7 @@
           class="main-gallery"
           v-if="isOpen"
           :images="thumbnails"
+          :active-image="index"
         ></main-gallery>
       </transition>
     </div>
@@ -22,14 +23,14 @@
     </div>
     <div class="thumbnail">
       <the-thumbnail
-        v-for="(item, i) in thumbnails"
+        v-for="(item, index) in thumbnails"
         :key="item.id"
-        :index="i"
+        :index="index"
         class="thumbnail__img"
-        :class="{ active: i === activeItem }"
+        :class="{ active: index === activeItem }"
         :item="item"
         @set-image="setImage"
-        @click="setActiveClass(i)"
+        @click="setActiveClass(index)"
       ></the-thumbnail>
     </div>
   </div>
@@ -38,7 +39,7 @@
 <script setup>
 import MainGallery from "@/components/ui/MainGallery";
 import TheThumbnail from "@/components/TheThumbnail";
-import { ref, defineProps } from "vue";
+import { ref, defineProps, computed, onMounted } from "vue";
 const props = defineProps({
   images: {
     type: Array,
@@ -51,7 +52,6 @@ const props = defineProps({
 });
 const currentImg = ref(props.images[0].img);
 const activeItem = ref(0);
-
 // const emit = defineEmits(["open-gallery"]);
 
 const setImage = (item) => {
@@ -60,9 +60,16 @@ const setImage = (item) => {
 const setActiveClass = (i) => {
   activeItem.value = i;
 };
+const index = computed(() => {
+  return activeItem.value;
+});
 // const emitIsOpen = () => {
 //   emit("open-gallery");
 // };
+
+onMounted(() => {
+  console.log(index);
+});
 
 const isOpen = ref(false);
 
@@ -78,11 +85,12 @@ const manageGallery = () => {
   left: 0;
   top: 0;
 }
-.main-gallery {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
+// .main-gallery {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%);
+// }
 .thumbnail {
   display: flex;
   flex: 1;
@@ -119,22 +127,22 @@ body {
   color: $c-red;
 }
 .overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
   z-index: 1;
-  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
-  height: 100vh;
-  min-width: 100vh;
 }
 
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
 .bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
+  animation: bounce-in 0.35s reverse;
 }
 @keyframes bounce-in {
   0% {

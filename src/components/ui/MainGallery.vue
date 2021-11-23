@@ -7,7 +7,7 @@
           v-for="(item, index) in props.images"
           :key="index"
         >
-          <img class="glide__slide-img" :src="item.img" />
+          <img :data-id="index" class="glide__slide-img" :src="item.img" />
         </li>
       </ul>
       <div class="glide__arrows" data-glide-el="controls">
@@ -18,15 +18,8 @@
           next
         </button>
       </div>
-      <div class="glide__bullets" data-glide-el="controls[nav]">
-        <button
-          v-for="i in props.images.length"
-          :key="i"
-          class="glide__bullet"
-          data-glide-dir="=0"
-        ></button>
-      </div>
     </div>
+    {{ activeImage }}
   </div>
 </template>
 
@@ -38,6 +31,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  activeImage: {
+    type: Number,
+    default: 0,
+  },
 });
 
 onMounted(async () => {
@@ -46,7 +43,7 @@ onMounted(async () => {
     Breakpoints,
     gap: 0,
     perView: 1,
-    startAt: 0,
+    startAt: props.activeImage,
     focusAt: "center",
     type: "carousel",
     autoplay: 0,
@@ -64,8 +61,7 @@ onMounted(async () => {
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 .glide {
   width: 600px;
-  margin: 0 auto;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
