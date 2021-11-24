@@ -4,11 +4,11 @@
       <div class="overlay" v-if="isOpen" @click="manageGallery"></div>
     </transition>
     <transition name="bounce">
-      <main-gallery
+      <the-full-screen-gallery
         v-if="isOpen"
-        class="main-gallery"
+        class="the-full-screen-gallery"
         :images="product.images"
-      ></main-gallery>
+      ></the-full-screen-gallery>
     </transition>
     <!-- <the-box>
       <template v-slot:gallery
@@ -27,7 +27,7 @@
 // import TheBox from "@/components/TheBox/TheBox.vue";
 // import TheGallery from "@/components/TheGallery";
 // import TheProduct from "@/components/TheProduct.vue";
-import MainGallery from "@/components/ui/MainGallery";
+import TheFullScreenGallery from "@/components/ui/TheFullScreenGallery";
 import { ref } from "vue";
 const isOpen = ref(false);
 const product = ref({

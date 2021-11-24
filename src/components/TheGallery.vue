@@ -5,12 +5,12 @@
         <div class="overlay" v-if="isOpen" @click="manageGallery"></div>
       </transition>
       <transition name="bounce">
-        <main-gallery
-          class="main-gallery"
+        <the-full-screen-gallery
+          class="the-full-screen-gallery"
           v-if="isOpen"
           :images="thumbnails"
-          :active-image="index"
-        ></main-gallery>
+          :active-image="activeImage"
+        ></the-full-screen-gallery>
       </transition>
     </div>
     <div>
@@ -25,7 +25,6 @@
       <the-thumbnail
         v-for="(item, index) in thumbnails"
         :key="item.id"
-        :index="index"
         class="thumbnail__img"
         :class="{ active: index === activeItem }"
         :item="item"
@@ -37,9 +36,9 @@
 </template>
 
 <script setup>
-import MainGallery from "@/components/ui/MainGallery";
+import TheFullScreenGallery from "@/components/ui/TheFullScreenGallery";
 import TheThumbnail from "@/components/TheThumbnail";
-import { ref, defineProps, computed, onMounted } from "vue";
+import { ref, defineProps, computed } from "vue";
 const props = defineProps({
   images: {
     type: Array,
@@ -60,16 +59,12 @@ const setImage = (item) => {
 const setActiveClass = (i) => {
   activeItem.value = i;
 };
-const index = computed(() => {
+const activeImage = computed(() => {
   return activeItem.value;
 });
 // const emitIsOpen = () => {
 //   emit("open-gallery");
 // };
-
-onMounted(() => {
-  console.log(index);
-});
 
 const isOpen = ref(false);
 
@@ -85,12 +80,7 @@ const manageGallery = () => {
   left: 0;
   top: 0;
 }
-// .main-gallery {
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%);
-// }
+
 .thumbnail {
   display: flex;
   flex: 1;
