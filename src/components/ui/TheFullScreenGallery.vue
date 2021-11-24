@@ -19,7 +19,6 @@
         </button>
       </div>
     </div>
-    {{ activeImage }}
   </div>
 </template>
 

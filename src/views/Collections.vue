@@ -8,9 +8,9 @@
           :thumbnails="item.thumbnails"
         ></the-gallery
       ></template>
-      <template v-slot:product
-        ><the-product>{{ item }}</the-product></template
-      >
+      <template v-slot:product>
+        <the-product :item-info="item"></the-product>
+      </template>
     </the-box>
   </div>
 </template>
