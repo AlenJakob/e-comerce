@@ -1,9 +1,7 @@
 <template>
   <div class="the-gallery">
     <div class="the-big-gallery">
-      <transition name="fade">
-        <div class="overlay" v-if="isOpen" @click="manageGallery"></div>
-      </transition>
+      <the-overlay :is-open="isOpen" @click="manageGallery"></the-overlay>
       <transition name="bounce">
         <the-full-screen-gallery
           class="the-full-screen-gallery"
@@ -13,23 +11,21 @@
         ></the-full-screen-gallery>
       </transition>
     </div>
-    <div>
-      <img
-        class="the-gallery__image"
-        :src="currentImg"
-        :alt="images[0].url"
-        @click="manageGallery"
-      />
-    </div>
+
+    <img
+      class="the-gallery__image"
+      :src="currentImg"
+      :alt="images[0].url"
+      @click="manageGallery"
+    />
     <div class="thumbnail">
       <the-thumbnail
         v-for="(item, index) in thumbnails"
         :key="item.id"
-        class="thumbnail__img"
-        :class="{ active: index === activeItem }"
         :item="item"
-        @set-image="setImage"
+        :class="{ active: index === activeItem }"
         @click="setActiveClass(index)"
+        @set-image="setImage"
       ></the-thumbnail>
     </div>
   </div>
@@ -38,6 +34,7 @@
 <script setup>
 import TheFullScreenGallery from "@/components/ui/TheFullScreenGallery";
 import TheThumbnail from "@/components/TheThumbnail";
+import TheOverlay from "@/components/ui/utils/TheOverlay";
 import { ref, defineProps, computed } from "vue";
 const props = defineProps({
   images: {
@@ -51,7 +48,6 @@ const props = defineProps({
 });
 const currentImg = ref(props.images[0].img);
 const activeItem = ref(0);
-// const emit = defineEmits(["open-gallery"]);
 
 const setImage = (item) => {
   currentImg.value = item;
@@ -62,9 +58,6 @@ const setActiveClass = (i) => {
 const activeImage = computed(() => {
   return activeItem.value;
 });
-// const emitIsOpen = () => {
-//   emit("open-gallery");
-// };
 
 const isOpen = ref(false);
 
@@ -80,15 +73,12 @@ const manageGallery = () => {
   left: 0;
   top: 0;
 }
-
 .thumbnail {
   display: flex;
   flex: 1;
   gap: 10px;
 }
-.thumbnail__img {
-  border: 3px dashed transparent;
-}
+
 .the-gallery {
   flex: 1;
   cursor: pointer;
@@ -101,7 +91,6 @@ const manageGallery = () => {
     margin-bottom: 8px;
   }
 }
-
 .active {
   border-color: $c-orange;
 }
@@ -116,18 +105,6 @@ body {
 .header {
   color: $c-red;
 }
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
