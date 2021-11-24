@@ -1,9 +1,28 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <the-navigation></the-navigation>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss"></style>
+<script>
+import TheNavigation from "@/components/TheNavigation/TheNavigation";
+export default {
+  components: {
+    TheNavigation,
+  },
+};
+</script>
+<style lang="scss">
+* {
+  font-family: $font-family;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.app {
+  max-width: 1440px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+</style>
