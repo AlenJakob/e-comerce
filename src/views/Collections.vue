@@ -9,7 +9,7 @@
         ></the-gallery
       ></template>
       <template v-slot:product>
-        <the-product :item-info="item"></the-product>
+        <the-product-info :item-info="item"></the-product-info>
       </template>
     </the-box>
   </div>
@@ -18,7 +18,7 @@
 <script setup>
 import TheBox from "@/components/TheBox/TheBox.vue";
 import TheGallery from "@/components/TheGallery";
-import TheProduct from "@/components/TheProduct.vue";
+import TheProductInfo from "@/components/TheProductInfo";
 import SHOES_COLLECTION from "@/services/collections/index";
 import { onMounted, ref } from "vue";
 

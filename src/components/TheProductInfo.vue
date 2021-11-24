@@ -1,14 +1,16 @@
 <template>
-  <div class="the-product">
-    <h2>prod2</h2>
-    <p>{{ props.itemInfo }}</p>
+  <div class="the-product-info">
+    <h3>{{ itemInfo.brand_name }}</h3>
+    <h3>{{ itemInfo.name }}</h3>
+    <h3>{{ itemInfo.sku }}</h3>
+    <p>{{ itemInfo.description }}</p>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
 
-const props = defineProps({
+defineProps({
   itemInfo: {
     type: Object,
     default: () => ({}),
@@ -16,7 +18,7 @@ const props = defineProps({
 });
 </script>
 <style lang="scss" scoped>
-.the-product {
+.the-product-info {
   flex: 1;
 }
 </style>
