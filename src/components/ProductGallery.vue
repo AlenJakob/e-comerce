@@ -15,7 +15,7 @@
     <img
       class="product-gallery__image"
       :src="currentImg"
-      :alt="images[0].url"
+      alt="temporary alt please put something here"
       @click="manageGallery"
     />
     <div class="thumbnail">
@@ -81,14 +81,17 @@ const manageGallery = () => {
 
 .product-gallery {
   flex: 1;
-  cursor: pointer;
 
   &__image {
+    cursor: pointer;
     object-fit: cover;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 4px;
     margin-bottom: 8px;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
 .active {

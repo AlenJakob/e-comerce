@@ -7,7 +7,12 @@
           v-for="(item, index) in props.images"
           :key="index"
         >
-          <img :data-id="index" class="glide__slide-img" :src="item.img" />
+          <img
+            class="glide__slide-img"
+            alt="tmp alt please put something here"
+            :data-id="index"
+            :src="item.img"
+          />
         </li>
       </ul>
       <div class="glide__arrows" data-glide-el="controls">

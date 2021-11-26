@@ -2,6 +2,7 @@
   <img
     class="product-thumbnail__img"
     :src="props.item.img"
+    alt="temporary shoes please place alt"
     @click="getImage(props.item)"
   />
 </template>
@@ -32,8 +33,8 @@ const getImage = ({ img }) => {
   margin-right: 8px;
   object-fit: cover;
   border-radius: 4px;
-  width: 94px;
-  height: 94px;
+  width: 70px;
+  height: 70px;
   &:hover {
     opacity: 0.8;
     cursor: pointer;

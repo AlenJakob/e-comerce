@@ -1,4 +1,4 @@
-# product-page
+# e-commerce-shoe
 
 ## Project setup
 ```
