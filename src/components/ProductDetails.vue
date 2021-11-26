@@ -29,10 +29,15 @@
     </div>
 
     <div class="product-cta">
-      <button class="product-cta__button">-</button>
-      <span class="product-cta__value">0</span>
-      <button class="product-cta__button">+</button>
-      <product-button text="Add to cart"></product-button>
+      <div class="cta__box">
+        <button class="cta__box__button">-</button>
+        <span class="cta__box__value">0</span>
+        <button class="cta__box__button">+</button>
+      </div>
+      <product-button
+        class="cta__box-button--spacing"
+        text="Add to cart"
+      ></product-button>
     </div>
   </main>
 </template>
@@ -122,5 +127,44 @@ defineProps({
     font-size: 1.2rem;
     padding: 2px 12px;
   }
+}
+.product-cta {
+  display: flex;
+  align-items: center;
+}
+.cta__box {
+  background: $c-light-gray-blue;
+  border-radius: 1rem;
+  display: flex;
+  height: 46px;
+  &__button {
+    border-radius: 1rem;
+    background: $c-light-gray-blue;
+    border: none;
+    width: 46px;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    color: $c-orange;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background: rgba($c-grayish-blue, 0.6);
+    }
+    &:active {
+      background: rgba($c-grayish-blue, 0.8);
+    }
+  }
+  &__value {
+    font-size: 1.2rem;
+    font-weight: $fw-bold;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.cta__box-button--spacing {
+  margin-left: 1rem;
 }
 </style>

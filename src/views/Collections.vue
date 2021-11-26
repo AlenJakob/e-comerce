@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Colellection site</h1>
-    <product-box v-for="item in shoesCollection" :key="item">
+    <product-box v-for="item in state.productList.shoes" :key="item">
       <template v-slot:gallery>
         <product-gallery
           :images="item.main_image"
@@ -20,11 +19,11 @@ import ProductBox from "@/components/TheBox/ProductBox.vue";
 import ProductGallery from "@/components/ProductGallery";
 import ProductDetails from "@/components/ProductDetails";
 import SHOES_COLLECTION from "@/services/collections/index";
-import { onMounted, ref } from "vue";
+import { onMounted, reactive } from "vue";
 
-const shoesCollection = ref(SHOES_COLLECTION.shoes);
+const state = reactive({ productList: SHOES_COLLECTION });
 
 onMounted(() => {
-  console.log(shoesCollection.value);
+  console.log(state.productList.shoes);
 });
 </script>

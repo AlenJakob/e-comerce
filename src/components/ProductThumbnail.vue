@@ -28,8 +28,8 @@ const getImage = ({ img }) => {
 
 <style lang="scss" scoped>
 .product-thumbnail__img {
-  border: 3px dashed transparent;
-  padding: 2px;
+  border: 2px dashed transparent;
+  padding: 1px;
   margin-right: 8px;
   object-fit: cover;
   border-radius: 4px;
