@@ -68,6 +68,5 @@ onMounted(async () => {
 }
 .glide__slide-img {
   width: 100%;
-  border-radius: 20px;
 }
 </style>

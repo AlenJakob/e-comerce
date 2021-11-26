@@ -1,24 +1,24 @@
 <template>
   <div>
     <h1>Colellection site</h1>
-    <the-box v-for="item in shoesCollection" :key="item">
+    <product-box v-for="item in shoesCollection" :key="item">
       <template v-slot:gallery>
-        <the-gallery
+        <product-gallery
           :images="item.main_image"
           :thumbnails="item.thumbnails"
-        ></the-gallery
+        ></product-gallery
       ></template>
       <template v-slot:product>
-        <the-product-info :item-info="item"></the-product-info>
+        <product-info :item-info="item"></product-info>
       </template>
-    </the-box>
+    </product-box>
   </div>
 </template>
 
 <script setup>
-import TheBox from "@/components/TheBox/TheBox.vue";
-import TheGallery from "@/components/TheGallery";
-import TheProductInfo from "@/components/TheProductInfo";
+import ProductBox from "@/components/TheBox/ProductBox.vue";
+import ProductGallery from "@/components/ProductGallery";
+import ProductInfo from "@/components/ProductInfo";
 import SHOES_COLLECTION from "@/services/collections/index";
 import { onMounted, ref } from "vue";
 

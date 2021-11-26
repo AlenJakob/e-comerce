@@ -1,6 +1,6 @@
 <template>
   <img
-    class="the-thumbnail__img"
+    class="product-thumbnail__img"
     :src="props.item.img"
     @click="getImage(props.item)"
   />
@@ -26,7 +26,7 @@ const getImage = ({ img }) => {
 </script>
 
 <style lang="scss" scoped>
-.the-thumbnail__img {
+.product-thumbnail__img {
   border: 3px dashed transparent;
   padding: 2px;
   margin-right: 8px;

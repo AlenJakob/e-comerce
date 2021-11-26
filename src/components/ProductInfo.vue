@@ -1,6 +1,7 @@
 <template>
-  <div class="the-product-info">
-    <p>{{ itemInfo.brand_name }}</p>
+  <div class="product-info">
+    <div class="product-info"></div>
+    <p class="product-info">{{ itemInfo.brand_name }}</p>
     <p>{{ itemInfo.name }}</p>
     <p>{{ itemInfo.sku }}</p>
     <p>{{ itemInfo.description }}</p>
@@ -25,7 +26,7 @@ defineProps({
 });
 </script>
 <style lang="scss" scoped>
-.the-product-info {
+.product-info {
   flex: 1;
 }
 p {
