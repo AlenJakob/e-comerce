@@ -22,7 +22,6 @@ import SHOES_COLLECTION from "@/services/collections/index";
 import { onMounted, reactive } from "vue";
 
 const state = reactive({ productList: SHOES_COLLECTION });
-
 onMounted(() => {
   console.log(state.productList.shoes);
 });

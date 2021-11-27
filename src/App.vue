@@ -27,4 +27,8 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
 </style>

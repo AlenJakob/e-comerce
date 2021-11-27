@@ -23,16 +23,16 @@
         {{ size }}
       </button>
       <p class="product-details__color">
-        color:
-        <span class="product-details__color--label">{{ itemInfo.color }}</span>
+        <span class="product-details__color-text">color:</span>
+        <span class="product-details__color-label">{{ itemInfo.color }}</span>
       </p>
     </div>
 
     <div class="product-cta">
       <div class="cta__box">
-        <button class="cta__box__button">-</button>
-        <span class="cta__box__value">0</span>
-        <button class="cta__box__button">+</button>
+        <button @click="removeQtyProduct" class="cta__box__button">-</button>
+        <span class="cta__box__value">{{ quantity }}</span>
+        <button @click="addQtyProduct" class="cta__box__button">+</button>
       </div>
       <product-button
         class="cta__box-button--spacing"
@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref, onMounted } from "vue";
 // NOTE: method accept array
 import SHOE_CALCULATE from "@/helpers/index";
 import ProductButton from "@/components/ui/utils/ProductButton";
@@ -53,6 +53,24 @@ defineProps({
     type: Object,
     default: () => ({}),
   },
+});
+
+const quantity = ref(0);
+
+const addQtyProduct = () => {
+  console.log(quantity.value);
+  quantity.value++;
+};
+const removeQtyProduct = () => {
+  console.log(quantity.value);
+  if (quantity.value <= 0) {
+    return;
+  }
+  quantity.value--;
+};
+
+onMounted(() => {
+  console.log(quantity.value);
 });
 </script>
 <style lang="scss" scoped>
@@ -119,12 +137,15 @@ defineProps({
   &__color {
     margin: 2rem 0;
   }
-  &__color--label {
+  &__color-text {
+    color: $c-dark-gray;
+  }
+  &__color-label {
     margin-left: 8px;
     font-weight: $fw-bold;
     border: 2px dashed rgba($c-dark-gray, 0.4);
     border-radius: 4px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 2px 12px;
   }
 }
