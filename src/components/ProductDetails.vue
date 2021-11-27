@@ -1,5 +1,6 @@
 <template>
   <main class="product-details">
+    <h3>ID:{{ itemInfo.id }}</h3>
     <div class="product-header">
       <h3 class="product-header__brand">{{ itemInfo.brand_name }}</h3>
       <h1 class="product-header__heading">{{ itemInfo.name }}</h1>
@@ -16,9 +17,10 @@
     <div class="product-details">
       <button
         class="product-details__btn-size"
-        :class="{ 'product-details__btn-size--active': index === 2 }"
+        :class="{ 'product-details__btn-size--active': index === sizePicker }"
         v-for="(size, index) in SHOE_CALCULATE(itemInfo.size_range)"
         :key="index"
+        @click="pickShoeSize(index, size)"
       >
         {{ size }}
       </button>
@@ -30,20 +32,32 @@
 
     <div class="product-cta">
       <div class="cta__box">
-        <button @click="removeQtyProduct" class="cta__box__button">-</button>
-        <span class="cta__box__value">{{ quantity }}</span>
-        <button @click="addQtyProduct" class="cta__box__button">+</button>
+        <button
+          @click="removeQtyProduct"
+          class="cta__box__button cta__box__button--border-right-none"
+        >
+          -
+        </button>
+        <input class="cta__box__value" :value="state.quantity" />
+        <button
+          @click="addQtyProduct"
+          class="cta__box__button cta__box__button--border-left-none"
+        >
+          +
+        </button>
       </div>
       <product-button
         class="cta__box-button--spacing"
         text="Add to cart"
+        :is-bold="true"
       ></product-button>
     </div>
+    {{ state }}
   </main>
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted } from "vue";
+import { defineProps, ref, reactive, onMounted } from "vue";
 // NOTE: method accept array
 import SHOE_CALCULATE from "@/helpers/index";
 import ProductButton from "@/components/ui/utils/ProductButton";
@@ -54,23 +68,31 @@ defineProps({
     default: () => ({}),
   },
 });
+const sizePicker = ref(0);
 
-const quantity = ref(0);
+const state = reactive({
+  size: null,
+  quantity: 0,
+});
 
+const pickShoeSize = (index, size) => {
+  state.size = size;
+  sizePicker.value = index;
+};
 const addQtyProduct = () => {
-  console.log(quantity.value);
-  quantity.value++;
+  console.log(state.quantity);
+  state.quantity++;
 };
 const removeQtyProduct = () => {
-  console.log(quantity.value);
-  if (quantity.value <= 0) {
+  console.log(state.quantity);
+  if (state.quantity <= 0) {
     return;
   }
-  quantity.value--;
+  state.quantity--;
 };
 
 onMounted(() => {
-  console.log(quantity.value);
+  console.log(state.quantity);
 });
 </script>
 <style lang="scss" scoped>
@@ -127,8 +149,12 @@ onMounted(() => {
     font-weight: $fw-bold;
     height: 40px;
     width: 40px;
+    cursor: pointer;
     &:first-child {
       margin-left: 0;
+    }
+    &:hover {
+      background: rgba($c-black, 0.1);
     }
     &--active {
       border-color: rgba($c-dark-gray, 0.6);
@@ -175,8 +201,18 @@ onMounted(() => {
     &:active {
       background: rgba($c-grayish-blue, 0.8);
     }
+    &--border-right-none {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &--border-left-none {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
   &__value {
+    border-color: rgba($c-orange, 0.2);
+    text-align: center;
     font-size: 1.2rem;
     font-weight: $fw-bold;
     width: 72px;

@@ -1,5 +1,5 @@
 <template>
-  <button class="product-button">
+  <button class="product-button" :class="{ 'product-button--bold': isBold }">
     <slot></slot>
     <span>{{ props.text }}</span>
   </button>
@@ -11,6 +11,10 @@ const props = defineProps({
   text: {
     type: String,
     default: "click",
+  },
+  isBold: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
@@ -27,6 +31,9 @@ const props = defineProps({
   cursor: pointer;
   &:hover {
     background: rgba($c-orange, 0.9);
+  }
+  &--bold {
+    font-weight: $fw-bold;
   }
 }
 </style>
