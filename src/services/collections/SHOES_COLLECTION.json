@@ -5,7 +5,7 @@
 			"brand_name": "Air Jordan",
 			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
-			"price": 125,
+			"price": 250,
 			"discount": 50,
 			"category": [
 				"basketball"
@@ -48,12 +48,12 @@
 				}
 			],
 			"size_range": [
-				10,
-				10.5,
-				11,
-				11.5,
-				12,
-				12.5
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
 			],
 			"sku": "555088 013"
 		},
@@ -61,7 +61,7 @@
 			"brand_name": "Air Jordan",
 			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
-			"price": 125,
+			"price": 250,
 			"discount": 50,
 			"category": [
 				"basketball"
@@ -105,12 +105,12 @@
 			],
 			"id": 11,
 			"size_range": [
-				10,
-				10.5,
-				11,
-				11.5,
-				12,
-				12.5
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
 			],
 			"sku": "555088 013"
 		}

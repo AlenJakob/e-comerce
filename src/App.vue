@@ -5,13 +5,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TheNavigation from "@/components/TheNavigation/TheNavigation";
-export default {
-  components: {
-    TheNavigation,
-  },
-};
+import store from "@/store";
+import { provide } from "vue";
+provide("store", store);
 </script>
 <style lang="scss">
 * {

@@ -1,6 +1,5 @@
 <template>
   <main class="product-details">
-    <h3>ID:{{ itemInfo.id }}</h3>
     <div class="product-header">
       <h3 class="product-header__brand">{{ itemInfo.brand_name }}</h3>
       <h1 class="product-header__heading">{{ itemInfo.name }}</h1>
@@ -18,9 +17,9 @@
       <button
         class="product-details__btn-size"
         :class="{ 'product-details__btn-size--active': index === sizePicker }"
-        v-for="(size, index) in SHOE_CALCULATE(itemInfo.size_range)"
+        v-for="(size, index) in itemInfo.size_range"
         :key="index"
-        @click="pickShoeSize(index, size)"
+        @click="setShoeDetails(index, size)"
       >
         {{ size }}
       </button>
@@ -38,7 +37,7 @@
         >
           -
         </button>
-        <input class="cta__box__value" :value="state.quantity" />
+        <input class="cta__box__value" :value="product.quantity" />
         <button
           @click="addQtyProduct"
           class="cta__box__button cta__box__button--border-left-none"
@@ -47,22 +46,24 @@
         </button>
       </div>
       <product-button
+        @click="store.methods.addProduct(itemInfo.id, product)"
         class="cta__box-button--spacing"
         text="Add to cart"
         :is-bold="true"
       ></product-button>
     </div>
-    {{ state }}
+    {{ product }}
   </main>
 </template>
 
 <script setup>
-import { defineProps, ref, reactive, onMounted } from "vue";
+import { defineProps, ref, reactive, onMounted, inject } from "vue";
 // NOTE: method accept array
-import SHOE_CALCULATE from "@/helpers/index";
 import ProductButton from "@/components/ui/utils/ProductButton";
 
-defineProps({
+const store = inject("store");
+
+const props = defineProps({
   itemInfo: {
     type: Object,
     default: () => ({}),
@@ -70,29 +71,26 @@ defineProps({
 });
 const sizePicker = ref(0);
 
-const state = reactive({
-  size: null,
-  quantity: 0,
+const product = reactive({
+  size: props.itemInfo.size_range[0],
+  quantity: 1,
 });
 
-const pickShoeSize = (index, size) => {
-  state.size = size;
+const setShoeDetails = (index, size) => {
+  product.size = size;
   sizePicker.value = index;
 };
 const addQtyProduct = () => {
-  console.log(state.quantity);
-  state.quantity++;
+  product.quantity++;
 };
 const removeQtyProduct = () => {
-  console.log(state.quantity);
-  if (state.quantity <= 0) {
+  if (product.quantity <= 1) {
     return;
   }
-  state.quantity--;
+  product.quantity--;
 };
-
 onMounted(() => {
-  console.log(state.quantity);
+  console.log("fom details product");
 });
 </script>
 <style lang="scss" scoped>
@@ -136,7 +134,7 @@ onMounted(() => {
     text-decoration: line-through;
   }
 }
-// .product-details__btn-size--active // active state of marked shoe size
+// .product-details__btn-size--active // active product of marked shoe size
 // TODO: method that allows to choose only 1 size of shoes
 .product-details {
   margin: 1rem 0;
