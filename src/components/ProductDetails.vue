@@ -10,7 +10,7 @@
 
     <div class="product-summary">
       <p class="product-summary__price">${{ itemInfo.price }}.00</p>
-      <p class="product-summary__discount">${{ itemInfo.price / 2 }}0</p>
+      <p class="product-summary__discount">${{ itemInfo.price / 2 }}.00</p>
     </div>
 
     <div class="product-details">
@@ -35,18 +35,44 @@
           @click="removeQtyProduct"
           class="cta__box__button cta__box__button--border-right-none"
         >
-          -
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="12"
+            height="4"
+          >
+            <defs>
+              <path
+                d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                id="a"
+              />
+            </defs>
+            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+          </svg>
         </button>
         <input class="cta__box__value" :value="product.quantity" />
         <button
           @click="addQtyProduct"
           class="cta__box__button cta__box__button--border-left-none"
         >
-          +
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="12"
+            height="12"
+          >
+            <defs>
+              <path
+                d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                id="b"
+              />
+            </defs>
+            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+          </svg>
         </button>
       </div>
       <product-button
-        @click="store.methods.addProduct(itemInfo.id, product)"
+        @click="callToAction(itemInfo.id, product)"
         class="cta__box-button--spacing"
         text="Add to cart"
         :is-bold="true"
@@ -69,6 +95,7 @@ const props = defineProps({
     default: () => ({}),
   },
 });
+
 const sizePicker = ref(0);
 
 const product = reactive({
@@ -89,8 +116,13 @@ const removeQtyProduct = () => {
   }
   product.quantity--;
 };
+
+const callToAction = (id, product) => {
+  store.methods.addProduct(id, product);
+  product.quantity = 1;
+};
 onMounted(() => {
-  console.log("fom details product");
+  //   console.log("fom details product");
 });
 </script>
 <style lang="scss" scoped>
@@ -192,6 +224,7 @@ onMounted(() => {
     color: $c-orange;
     display: flex;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     &:hover {
       background: rgba($c-grayish-blue, 0.6);

@@ -38,13 +38,11 @@
 import CartTooltip from "@/components/ui/utils/CartTooltip";
 import consts from "@/services/index";
 import store from "@/store";
-import { onMounted, computed } from "vue";
+import { computed } from "vue";
 
+// eslint-disable-next-line vue/return-in-computed-property
 const itemsInCart = computed(() => {
-  return store.state.cart.length;
-});
-onMounted(() => {
-  console.log(store.state.cart.length);
+  return store.state.cart.reduce((acc, val) => (acc += val.quantity), 0);
 });
 </script>
 

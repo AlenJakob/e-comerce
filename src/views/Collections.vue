@@ -23,6 +23,6 @@ import { onMounted, reactive } from "vue";
 
 const state = reactive({ productList: SHOES_COLLECTION });
 onMounted(() => {
-  console.log(state.productList.shoes);
+  console.log();
 });
 </script>
