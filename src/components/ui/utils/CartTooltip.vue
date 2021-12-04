@@ -6,7 +6,9 @@
           <span class="product-details__title">{{ item.name }}</span>
           <ul class="product-details__list">
             <li class="product-details__list-item">${{ item.price / 2 }} x</li>
-            <li class="product-details__list-item">{{ item.quantity }}</li>
+            <li class="product-details__list-item">
+              {{ item.quantity }} <b style="color: red">{{ item.size }}</b>
+            </li>
             <li
               class="
                 product-details__list-item
@@ -26,7 +28,7 @@
           </ul>
         </div>
         <span
-          @click="store.methods.removeProduct(item.id)"
+          @click="store.methods.removeProduct(item.id, item.size)"
           class="product-btn-remove"
         >
           <svg

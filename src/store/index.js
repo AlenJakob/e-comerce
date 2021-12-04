@@ -6,30 +6,26 @@ const state = reactive({
 });
 
 const methods = {
-  addProduct(id, details) {
-    console.log(state.cart.length);
-    // console.log("CURRENT PRODUCT ", id);
-    const isProductInCart = state.cart.find((prod) => id === prod.id);
+  addProduct(id, detail) {
+    const isProductInCart = state.cart.find(
+      (prod) => prod.id === id && prod.size === detail.size
+    );
 
     const product = SHOES_COLLECTION.shoes.find((product) => product.id === id);
 
-    let fullyLoadedProduct = { ...product, ...details };
-
+    let fullyLoadedProduct = { ...product, ...detail };
     if (isProductInCart) {
-      //   console.log("SDASD___", isProductInCart);
-      //   console.log(
-      //     "%c That means product is in the cart",
-      //     "background: #222; color: #bada55"
-      //   );
       return (isProductInCart.quantity =
-        isProductInCart.quantity + details.quantity);
+        isProductInCart.quantity + detail.quantity);
     }
+
     state.cart.push(fullyLoadedProduct);
-    // console.log(state.cart, "AFTER Added product");
   },
-  removeProduct(id) {
-    state.cart.find((product) => product.id === id);
-    state.cart = state.cart.filter((item) => item.id !== id);
+  removeProduct(id, size) {
+    state.cart = state.cart.filter((obj) => {
+      console.log(obj.id, obj.size);
+      return !(obj.id === id && obj.size === size);
+    });
   },
 };
 
