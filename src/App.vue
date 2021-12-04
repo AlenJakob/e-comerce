@@ -1,14 +1,28 @@
 <template>
   <div class="app">
     <the-navigation></the-navigation>
+    <div class="home">
+      <transition name="fade">
+        <div class="overlay" v-if="isOpen" @click="manageGallery"></div>
+      </transition>
+      <transition name="bounce">
+        <product-full-screen-gallery
+          v-if="isOpen"
+          class="the-full-screen-gallery"
+          :images="product.images"
+        ></product-full-screen-gallery>
+      </transition>
+    </div>
     <router-view />
   </div>
 </template>
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation/TheNavigation";
+import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery";
 import store from "@/store";
-import { provide } from "vue";
+import { provide, ref } from "vue";
+const isOpen = ref(false);
 provide("store", store);
 </script>
 <style lang="scss">
