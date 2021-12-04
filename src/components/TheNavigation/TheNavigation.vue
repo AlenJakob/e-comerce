@@ -18,7 +18,7 @@
       >
     </nav>
     <div class="the-navigation__cta">
-      <router-link to="/cart" class="cart"
+      <span class="cart" @click="toggleCart"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="26"
@@ -32,9 +32,9 @@
           />
         </svg>
         <span class="cart__quantity">{{ itemsInCart }}</span>
-      </router-link>
+      </span>
       <span class="img cart__avatar"> </span>
-      <cart-tooltip></cart-tooltip>
+      <cart-tooltip @close-cart="toggleCart" v-if="cartVisible"></cart-tooltip>
     </div>
   </div>
 </template>
@@ -43,15 +43,14 @@
 import CartTooltip from "@/components/ui/utils/CartTooltip";
 import consts from "@/services/index";
 import store from "@/store";
-import { computed } from "vue";
-
-// eslint-disable-next-line vue/return-in-computed-property
+import { computed, ref } from "vue";
+const cartVisible = ref(false);
 const itemsInCart = computed(() => {
   return store.state.cart.reduce((acc, val) => (acc += val.quantity), 0);
 });
-// const avatarImg = computed(() => {
-//   return require("@/assets/image-avatar.png");
-// });
+const toggleCart = () => {
+  cartVisible.value = !cartVisible.value;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -90,6 +89,7 @@ const itemsInCart = computed(() => {
   }
 }
 .cart {
+  cursor: pointer;
   position: relative;
   margin-right: 40px;
   &__quantity {
