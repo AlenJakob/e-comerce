@@ -11,7 +11,7 @@ $mq-desktop: 1440px;
 // ## Colors
 
 // ### Primary
-
+$c-accent: #ff7d1b;
 $c-orange: hsl(26, 100%, 55%);
 $c-pale-orange: hsl(25, 100%, 94%);
 
@@ -19,6 +19,7 @@ $c-pale-orange: hsl(25, 100%, 94%);
 
 $c-very-dark-blue: hsl(220, 13%, 13%);
 $c-dark-grayish-blue: hsl(219, 9%, 45%);
+$c-dark-gray: #444444;
 $c-grayish-blue: hsl(220, 14%, 75%);
 $c-light-gray-blue: hsl(223, 64%, 98%);
 $c-white: hsl(0, 0%, 100%);
@@ -34,6 +35,7 @@ $c-black: hsl(0, 0%, 0%);
 $font-family: "Kumbh Sans", sans-serif;
 
 $fw-regular: 400;
+$fw-medium: 500;
 $fw-bold: 700;
 
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
@@ -41,3 +43,5 @@ $fw-bold: 700;
 .overlay.hide-outside {
   overflow: hidden;
 }
+
+@import "./reset.scss";

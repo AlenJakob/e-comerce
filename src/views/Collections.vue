@@ -1,30 +1,28 @@
 <template>
   <div>
-    <h1>Colellection site</h1>
-    <the-box v-for="item in shoesCollection" :key="item">
+    <product-box v-for="item in state.productList.shoes" :key="item">
       <template v-slot:gallery>
-        <the-gallery
+        <product-gallery
           :images="item.main_image"
           :thumbnails="item.thumbnails"
-        ></the-gallery
+        ></product-gallery
       ></template>
       <template v-slot:product>
-        <the-product :item-info="item"></the-product>
+        <product-details :item-info="item"></product-details>
       </template>
-    </the-box>
+    </product-box>
   </div>
 </template>
 
 <script setup>
-import TheBox from "@/components/TheBox/TheBox.vue";
-import TheGallery from "@/components/TheGallery";
-import TheProduct from "@/components/TheProduct.vue";
+import ProductBox from "@/components/TheBox/ProductBox.vue";
+import ProductGallery from "@/components/ProductGallery";
+import ProductDetails from "@/components/ProductDetails";
 import SHOES_COLLECTION from "@/services/collections/index";
-import { onMounted, ref } from "vue";
+import { onMounted, reactive } from "vue";
 
-const shoesCollection = ref(SHOES_COLLECTION.shoes);
-
+const state = reactive({ productList: SHOES_COLLECTION });
 onMounted(() => {
-  console.log(shoesCollection.value);
+  console.log();
 });
 </script>

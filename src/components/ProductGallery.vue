@@ -1,40 +1,40 @@
 <template>
-  <div class="the-gallery">
-    <div class="the-big-gallery">
-      <the-overlay :is-open="isOpen" @click="manageGallery"></the-overlay>
+  <div class="product-gallery">
+    <div class="product-big-gallery">
+      <screen-overlay :is-open="isOpen" @click="manageGallery"></screen-overlay>
       <transition name="bounce">
-        <the-full-screen-gallery
-          class="the-full-screen-gallery"
+        <product-full-screen-gallery
+          class="product-full-screen-gallery"
           v-if="isOpen"
           :images="thumbnails"
           :active-image="activeImage"
-        ></the-full-screen-gallery>
+        ></product-full-screen-gallery>
       </transition>
     </div>
 
     <img
-      class="the-gallery__image"
+      class="product-gallery__image"
       :src="currentImg"
-      :alt="images[0].url"
+      alt="temporary alt please put something here"
       @click="manageGallery"
     />
     <div class="thumbnail">
-      <the-thumbnail
+      <product-thumbnail
         v-for="(item, index) in thumbnails"
         :key="item.id"
         :item="item"
         :class="{ active: index === activeItem }"
         @click="setActiveClass(index)"
         @set-image="setImage"
-      ></the-thumbnail>
+      ></product-thumbnail>
     </div>
   </div>
 </template>
 
 <script setup>
-import TheFullScreenGallery from "@/components/ui/TheFullScreenGallery";
-import TheThumbnail from "@/components/TheThumbnail";
-import TheOverlay from "@/components/ui/utils/TheOverlay";
+import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery";
+import ProductThumbnail from "@/components/ProductThumbnail";
+import ScreenOverlay from "@/components/ui/utils/ScreenOverlay";
 import { ref, defineProps, computed } from "vue";
 const props = defineProps({
   images: {
@@ -79,16 +79,19 @@ const manageGallery = () => {
   gap: 10px;
 }
 
-.the-gallery {
+.product-gallery {
   flex: 1;
-  cursor: pointer;
 
   &__image {
+    cursor: pointer;
     object-fit: cover;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 4px;
     margin-bottom: 8px;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
 .active {

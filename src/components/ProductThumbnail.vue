@@ -1,7 +1,8 @@
 <template>
   <img
-    class="the-thumbnail__img"
+    class="product-thumbnail__img"
     :src="props.item.img"
+    alt="temporary shoes please place alt"
     @click="getImage(props.item)"
   />
 </template>
@@ -26,14 +27,14 @@ const getImage = ({ img }) => {
 </script>
 
 <style lang="scss" scoped>
-.the-thumbnail__img {
-  border: 3px dashed transparent;
-  padding: 2px;
+.product-thumbnail__img {
+  border: 2px dashed transparent;
+  padding: 1px;
   margin-right: 8px;
   object-fit: cover;
   border-radius: 4px;
-  width: 94px;
-  height: 94px;
+  width: 70px;
+  height: 70px;
   &:hover {
     opacity: 0.8;
     cursor: pointer;

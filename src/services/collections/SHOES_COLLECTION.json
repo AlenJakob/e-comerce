@@ -5,6 +5,8 @@
 			"brand_name": "Air Jordan",
 			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 250,
+			"discount": 50,
 			"category": [
 				"basketball"
 			],
@@ -16,7 +18,7 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"color": "Black",
+			"color": "Blue / White",
 			"details": "Black/White-Medium Grey",
 			"gender": [
 				"men"
@@ -46,19 +48,21 @@
 				}
 			],
 			"size_range": [
-				10,
-				10.5,
-				11,
-				11.5,
-				12,
-				12.5
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
 			],
 			"sku": "555088 013"
 		},
 		{
 			"brand_name": "Air Jordan",
-			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
+			"name": "Air Jordan 1 Retro High OG 'Shadow' 20122",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 250,
+			"discount": 50,
 			"category": [
 				"basketball"
 			],
@@ -70,7 +74,7 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"color": "Black",
+			"color": "Black / White",
 			"details": "Black/White-Medium Grey",
 			"gender": [
 				"men"
@@ -101,12 +105,12 @@
 			],
 			"id": 11,
 			"size_range": [
-				10,
-				10.5,
-				11,
-				11.5,
-				12,
-				12.5
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
 			],
 			"sku": "555088 013"
 		}
