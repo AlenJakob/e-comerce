@@ -50,7 +50,7 @@
             <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
           </svg>
         </button>
-        <input class="cta__box__value" :value="product.quantity" />
+        <input disabled class="cta__box__value" :value="product.quantity" />
         <button
           @click="addQtyProduct"
           class="cta__box__button cta__box__button--border-left-none"
@@ -250,6 +250,9 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+    &:disabled {
+      color: $c-black;
+    }
   }
 }
 .cta__box-button--spacing {

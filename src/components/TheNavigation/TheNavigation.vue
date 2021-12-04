@@ -82,7 +82,19 @@ const itemsInCart = computed(() => {
   }
 }
 .cart {
-  margin-right: 20px;
+  position: relative;
+  margin-right: 40px;
+  &__quantity {
+    position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    right: -18px;
+    top: -12px;
+    color: white;
+    background: $c-accent;
+    width: 28px;
+    padding: 1px;
+  }
 }
 .img {
   display: inline-block;

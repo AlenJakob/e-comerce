@@ -21,9 +21,9 @@ const methods = {
 
     state.cart.push(fullyLoadedProduct);
   },
+  //   TODO: while Back end will change - have to remove product base on id
   removeProduct(id, size) {
     state.cart = state.cart.filter((obj) => {
-      console.log(obj.id, obj.size);
       return !(obj.id === id && obj.size === size);
     });
   },
