@@ -3,11 +3,16 @@
     <div class="cart-tooltip__container">
       <div class="cart-tooltip__product" v-for="item in cart" :key="item.id">
         <div class="product-details">
-          <span class="product-details__title">{{ item.name }}</span>
+          <span class="product-details__title"
+            >{{ item.name }}
+            <span style="color: rgb(173, 95, 0)">
+              ( size: {{ item.size }} )</span
+            ></span
+          >
           <ul class="product-details__list">
             <li class="product-details__list-item">${{ item.price / 2 }} x</li>
             <li class="product-details__list-item">
-              {{ item.quantity }} <b style="color: red">{{ item.size }}</b>
+              {{ item.quantity }}
             </li>
             <li
               class="
@@ -48,7 +53,11 @@
         </span>
       </div>
     </div>
-    <product-button class="cart-btn" text="checkout"></product-button>
+    <product-button
+      href="/cart"
+      class="cart-btn"
+      text="checkout"
+    ></product-button>
   </div>
 </template>
 
@@ -69,7 +78,7 @@ const cart = computed(() => {
   padding: 1rem;
   width: 350px;
   right: 0;
-  top: calc(150px / 2 - 20px);
+  top: calc(180px / 2 - 20px);
   background: white;
   box-shadow: 0px 15px 15px rgba($c-black, 0.1);
   margin: 1rem 0;
@@ -92,6 +101,7 @@ const cart = computed(() => {
   flex: 1;
   margin: 1rem;
   &__title {
+    color: $c-dark-grayish-blue;
     margin-bottom: 0.5rem;
   }
   &__list {

@@ -78,13 +78,11 @@
         :is-bold="true"
       ></product-button>
     </div>
-    {{ product }}
   </main>
 </template>
 
 <script setup>
 import { defineProps, ref, reactive, onMounted, inject } from "vue";
-// NOTE: method accept array
 import ProductButton from "@/components/ui/utils/ProductButton";
 
 const store = inject("store");
