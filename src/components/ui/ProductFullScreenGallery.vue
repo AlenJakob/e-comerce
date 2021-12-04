@@ -16,11 +16,32 @@
         </li>
       </ul>
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-          prev
+        <button class="arrow glide-arrow--left arrow__left" data-glide-dir="<">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
+            <path
+              class="arrow--color"
+              d="M11 1 3 9l8 8"
+              stroke="#1D2026"
+              stroke-width="3"
+              fill="none"
+              fill-rule="evenodd"
+            />
+          </svg>
         </button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-          next
+        <button
+          class="arrow glide-arrow--right arrow__right"
+          data-glide-dir=">"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18">
+            <path
+              class="arrow--color"
+              d="m2 1 8 8-8 8"
+              stroke="#1D2026"
+              stroke-width="3"
+              fill="none"
+              fill-rule="evenodd"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -73,5 +94,26 @@ onMounted(async () => {
 }
 .glide__slide-img {
   width: 100%;
+}
+.arrow {
+  position: absolute;
+  background: $c-white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 3px rgba($c-black, 0.5);
+  top: 50%;
+  &:hover .arrow--color {
+    stroke: $c-accent;
+  }
+
+  &__left {
+    left: -25px;
+  }
+  &__right {
+    right: -25px;
+  }
 }
 </style>
