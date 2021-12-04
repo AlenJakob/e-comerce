@@ -116,12 +116,12 @@ const closeCart = () => {
     justify-content: center;
     background: $c-white;
     box-shadow: 0 0 3px grey;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     position: absolute;
-    right: calc(50% - 44px);
-    bottom: -15px;
+    right: calc(50% - 40px);
+    bottom: -20px;
     transform: translateX(-50%);
     &:hover .cart-tooltip__close--icon-color {
       fill: $c-accent;
