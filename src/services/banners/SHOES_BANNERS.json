@@ -1,9 +1,9 @@
 {
 	"banners": [
 		{
-			"id": 4,
-			"brand_name": "Air Jordan",
-			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
+			"id": 15,
+			"brand_name": "Fila",
+			"name": "Fila",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
 			"category": [
 				"basketball"
@@ -16,18 +16,12 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"main_image": [
-				{
-					"id": 1,
-					"name": "image-banner-1",
-					"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/fila_874X874.jpg)/fila_874X874.jpg"
-				}
-			]
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/fila_874X874.jpg)/fila_874X874.jpg"
 		},
 		{
-			"id": 4,
-			"brand_name": "Air Jordan",
-			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
+			"id": 17,
+			"brand_name": "adidas",
+			"name": "adidas",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
 			"category": [
 				"basketball"
@@ -40,18 +34,12 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"main_image": [
-				{
-					"id": 1,
-					"name": "image-banner-1",
-					"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/11_2021/marki/874x874_2.jpg)/874x874_2.jpg"
-				}
-			]
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/11_2021/marki/874x874_2.jpg)/874x874_2.jpg"
 		},
 		{
-			"id": 4,
-			"brand_name": "Air Jordan",
-			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
+			"id": 18,
+			"brand_name": "Karl Lagerfeld",
+			"name": "Karl Lagerfeld",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
 			"category": [
 				"basketball"
@@ -64,13 +52,7 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"main_image": [
-				{
-					"id": 1,
-					"name": "image-banner-1",
-					"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/874x874_NEW.jpg)/874x874_NEW.jpg"
-				}
-			]
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/874x874_NEW.jpg)/874x874_NEW.jpg"
 		}
 	]
 }

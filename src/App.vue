@@ -36,7 +36,7 @@ body {
 }
 .app {
   max-width: 1440px;
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 html {
