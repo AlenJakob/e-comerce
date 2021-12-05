@@ -1,0 +1,58 @@
+{
+	"banners": [
+		{
+			"id": 15,
+			"brand_name": "Fila",
+			"name": "Fila",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/fila_874X874.jpg)/fila_874X874.jpg"
+		},
+		{
+			"id": 17,
+			"brand_name": "adidas",
+			"name": "adidas",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/11_2021/marki/874x874_2.jpg)/874x874_2.jpg"
+		},
+		{
+			"id": 18,
+			"brand_name": "Karl Lagerfeld",
+			"name": "Karl Lagerfeld",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"img": "https://img.eobuwie.cloud/card_desktop_430w(wysiwyg/eobuwie/akcjeGlobalny/12_2021/newsg/874x874_NEW.jpg)/874x874_NEW.jpg"
+		}
+	]
+}
