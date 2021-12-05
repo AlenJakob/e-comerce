@@ -1,6 +1,9 @@
 <template>
   <div class="cart-tooltip">
     <div class="cart-tooltip__container">
+      <p v-if="!productsInCart" class="cart-tooltip__info">
+        No Products in Cart
+      </p>
       <div class="cart-tooltip__product" v-for="item in cart" :key="item.id">
         <div class="product-details">
           <span class="product-details__title"
@@ -22,14 +25,6 @@
             >
               ${{ (item.price / 2) * item.quantity }}
             </li>
-            <!-- <li
-              class="
-                product-details__list-item
-                product-details__list-item--line-through
-              "
-            >
-              {{ item.price / 2 }}
-            </li> -->
           </ul>
         </div>
         <span
@@ -54,10 +49,22 @@
       </div>
     </div>
     <product-button
+      @click="closeCart"
       href="/cart"
       class="cart-btn"
       text="checkout"
     ></product-button>
+    <span @click="closeCart" class="cart-tooltip__close"
+      ><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15">
+        <path
+          class="cart-tooltip__close--icon-color"
+          d="m11.596.782 2.122 2.122L9.12
+        7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878
+        7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+          fill="#69707D"
+          fill-rule="evenodd"
+        /></svg
+    ></span>
   </div>
 </template>
 
@@ -65,10 +72,17 @@
 // TODO: Show only 1 record if the item is te same
 import ProductButton from "@/components/ui/utils/ProductButton";
 import store from "@/store";
-import { computed } from "vue";
+import { computed, defineEmits } from "vue";
 const cart = computed(() => {
   return store.state.cart;
 });
+const productsInCart = computed(() => {
+  return store.state.cart.length;
+});
+const emit = defineEmits(["close-cart"]);
+const closeCart = () => {
+  emit("close-cart");
+};
 </script>
 <style scoped lang="scss">
 .cart-tooltip {
@@ -85,10 +99,33 @@ const cart = computed(() => {
   &__container {
     max-height: 300px;
     overflow-y: scroll;
+    position: relative;
   }
   &__product {
     display: flex;
     align-items: center;
+  }
+  &__info {
+    font-size: 18px;
+    text-align: center;
+  }
+  &__close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $c-white;
+    box-shadow: 0 0 3px grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: calc(50% - 40px);
+    bottom: -20px;
+    transform: translateX(-50%);
+    &:hover .cart-tooltip__close--icon-color {
+      fill: $c-accent;
+    }
   }
 }
 .product-container {
