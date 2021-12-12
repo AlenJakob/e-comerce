@@ -17,16 +17,13 @@
 <script setup>
 import { onMounted } from "vue";
 import Glide from "@glidejs/glide/dist/glide.esm";
-
+// git commit --amedn --no-edit
 onMounted(async () => {
   const glide = await new Glide(".glide", {
     gap: 20,
     perView: 4,
-    startAt: 0,
-    focusAt: "center",
+    startAt: 1,
     type: "carousel",
-    autoplay: 1,
-    animationDuration: 3000,
   });
   glide.mount();
 });
