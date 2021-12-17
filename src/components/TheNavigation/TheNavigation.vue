@@ -1,5 +1,6 @@
 <template>
   <div class="the-navigation">
+    <screen-overlay @click="toggleCart" :is-open="cartVisible"></screen-overlay>
     <router-link to="/" class="the-navigation__logo"
       ><svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -40,6 +41,7 @@
 </template>
 
 <script setup>
+import ScreenOverlay from "@/components/ui/utils/ScreenOverlay";
 import CartTooltip from "@/components/ui/utils/CartTooltip";
 import consts from "@/services/index";
 import store from "@/store";
@@ -89,6 +91,10 @@ const toggleCart = () => {
   }
 }
 .cart {
+  z-index: 10000;
+  height: 50px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   position: relative;
   margin-right: 40px;
@@ -98,7 +104,7 @@ const toggleCart = () => {
     font-size: 14px;
     text-align: center;
     right: -18px;
-    top: -12px;
+    top: 2px;
     color: white;
     background: $c-accent;
     width: 28px;

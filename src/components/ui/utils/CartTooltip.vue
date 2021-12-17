@@ -86,6 +86,7 @@ const closeCart = () => {
 </script>
 <style scoped lang="scss">
 .cart-tooltip {
+  z-index: 1000;
   box-sizing: border-box;
   position: absolute;
   min-height: 180px;

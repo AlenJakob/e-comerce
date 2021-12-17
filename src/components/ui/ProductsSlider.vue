@@ -2,16 +2,8 @@
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        <product-slider-item v-for="n in 15" :key="n"></product-slider-item>
+        <product-slider-item v-for="n in 25" :key="n"></product-slider-item>
       </ul>
-    </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-        prev
-      </button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        next
-      </button>
     </div>
   </div>
 </template>
@@ -23,7 +15,7 @@ import ProductSliderItem from "@/components/ui/ProductSliderItem";
 
 onMounted(async () => {
   const glide = await new Glide(".glide", {
-    gap: 40,
+    gap: 50,
     perView: 5,
     type: "carousel",
   });
@@ -33,6 +25,10 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .glide {
   overflow: hidden;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
 }
 .glide__slides {
   display: flex;
