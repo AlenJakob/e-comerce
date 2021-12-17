@@ -9,8 +9,8 @@
     </div>
 
     <div class="product-summary">
-      <p class="product-summary__price">${{ itemInfo.price }}.00</p>
-      <p class="product-summary__discount">${{ itemInfo.price / 2 }}.00</p>
+      <p class="product-summary__price">${{ itemInfo.price / 2 }}.00</p>
+      <p class="product-summary__discount">${{ itemInfo.price }}.00</p>
     </div>
 
     <div class="product-details">
