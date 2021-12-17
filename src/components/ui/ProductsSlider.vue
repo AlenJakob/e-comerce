@@ -5,6 +5,14 @@
         <product-slider-item v-for="n in 15" :key="n"></product-slider-item>
       </ul>
     </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        prev
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        next
+      </button>
+    </div>
   </div>
 </template>
 

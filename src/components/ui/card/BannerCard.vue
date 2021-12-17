@@ -11,12 +11,17 @@
       </li>
     </ul>
     <h2 class="banner-card__title">{{ banner.name }}</h2>
+    <p class="banner-card__category">
+      Category: <i>{{ banner.category[0] }}</i>
+    </p>
     <p class="banner-card__content">{{ banner.description }}</p>
-    <router-link to="/">sprawdź</router-link>
+    <product-button outline="true" text="Check Out"></product-button>
   </div>
 </template>
 
 <script setup>
+import ProductButton from "@/components/ui/utils/ProductButton";
+
 import { defineProps } from "vue";
 defineProps({
   banner: {
@@ -40,6 +45,9 @@ defineProps({
   }
   &__content {
     margin: 1rem 0;
+  }
+  &__category {
+    font-size: 14px;
   }
   &__slugs {
     display: flex;

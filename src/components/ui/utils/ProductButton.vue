@@ -10,7 +10,10 @@
     <template v-else>
       <button
         class="product-cta-button"
-        :class="{ 'product-button-cta--bold': isBold }"
+        :class="{
+          'product-button-cta--bold': isBold,
+          'product-cta--outline': outline,
+        }"
       >
         <slot></slot>
         <span>{{ props.text }}</span>
@@ -32,6 +35,10 @@ const props = defineProps({
   },
   href: {
     type: String,
+  },
+  outline: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
@@ -63,6 +70,22 @@ const props = defineProps({
       align-items: center;
       text-decoration: none;
     }
+  }
+}
+.product-cta-button {
+  &--small {
+    height: 36px;
+  }
+  &--medium {
+    height: 48px;
+  }
+}
+.product-cta--outline {
+  color: $c-orange;
+  border: 1px solid $c-orange;
+  background: $c-white;
+  &:hover {
+    background: rgba($c-orange, 0.1);
   }
 }
 </style>
