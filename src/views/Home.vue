@@ -31,11 +31,11 @@ onMounted(() => {
 }
 .banner-container {
   display: flex;
-  margin-top: 4rem;
+  margin-top: 5rem;
   gap: 30px;
 }
 .slider-box {
-  margin: 2rem 0;
+  margin: 5rem 0;
   max-width: 1100px;
 }
 </style>

@@ -49,7 +49,7 @@ const props = defineProps({
     border-radius: 0.4rem;
     border: none;
     height: 46px;
-    min-width: 200px;
+    min-width: 150px;
     cursor: pointer;
     &:hover {
       background: rgba($c-orange, 0.9);
