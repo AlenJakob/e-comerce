@@ -11,7 +11,7 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eos
         veniam! Expedita?
       </p>
-      <product-button></product-button>
+      <product-button text="checkout"></product-button>
     </div>
   </li>
 </template>
