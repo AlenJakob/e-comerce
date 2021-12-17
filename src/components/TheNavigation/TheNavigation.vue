@@ -89,6 +89,9 @@ const toggleCart = () => {
   }
 }
 .cart {
+  height: 50px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   position: relative;
   margin-right: 40px;
@@ -98,7 +101,7 @@ const toggleCart = () => {
     font-size: 14px;
     text-align: center;
     right: -18px;
-    top: -12px;
+    top: 2px;
     color: white;
     background: $c-accent;
     width: 28px;
