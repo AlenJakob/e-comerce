@@ -17,7 +17,7 @@
 <script setup>
 import { onMounted } from "vue";
 import Glide from "@glidejs/glide/dist/glide.esm";
-// git commit --amedn --no-edit
+
 onMounted(async () => {
   const glide = await new Glide(".glide", {
     gap: 20,
