@@ -15,7 +15,7 @@
       Category: <i>{{ banner.category[0] }}</i>
     </p>
     <p class="banner-card__content">{{ banner.description }}</p>
-    <product-button outline="true" text="Check Out"></product-button>
+    <product-button :outline="true" text="Check Out"></product-button>
   </div>
 </template>
 

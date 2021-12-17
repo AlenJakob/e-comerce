@@ -9,7 +9,7 @@
 .product-box {
   display: flex;
   gap: 20px;
-  padding: 2rem 4rem;
-  margin: 4rem 0;
+  padding: 1rem 4rem;
+  margin: 2rem 0;
 }
 </style>
