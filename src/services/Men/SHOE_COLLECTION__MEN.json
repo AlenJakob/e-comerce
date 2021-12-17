@@ -1,0 +1,420 @@
+{
+	"shoes": [
+		{
+			"brand_name": "Air Jordan",
+			"name": "Air Jordan 1 Retro High OG 'Shadow' 2018",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 250,
+			"discount": 50,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Blue / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713275_01_st.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713275_01_st.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713275_04_st.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713275_05_st.jpg"
+				}
+			],
+			"id": 11,
+			"size_range": [
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
+			],
+			"sku": "555088 011"
+		},
+		{
+			"brand_name": "Air Jordan",
+			"name": "Air Jordan 1 Retro High OG 'Shadow' 20122",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 250,
+			"discount": 50,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713213_01_bs_kopia.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713213_04_bs_kopia.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713213_02_bs_kopia.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713213_05_bs_kopia.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209713213_06_bs_kopia.jpg"
+				}
+			],
+			"id": 12,
+			"size_range": [
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
+			],
+			"sku": "555088 012"
+		},
+		{
+			"brand_name": "Nike Air Jordan",
+			"name": "Air Jordan 1 Retro High OG 'Shadow' 2012",
+			"description": "Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 350,
+			"discount": 20,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658835_01_kt.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658835_01_kt.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658835_05_kt.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658835_04_kt.jpg"
+				}
+			],
+			"id": 13,
+			"size_range": [
+				41,
+				42,
+				43,
+				44,
+				45,
+				47
+			],
+			"sku": "555088 013"
+		},
+		{
+			"brand_name": "Air Jordan",
+			"name": "Jordan Zion 1 DA3130 100 ",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 200,
+			"discount": 100,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571530_01_ki.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571530_01_ki.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571530_03_ki.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571530_02_ki.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571530_04_ki.jpg"
+				}
+			],
+			"id": 14,
+			"size_range": [
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 014"
+		},
+		{
+			"brand_name": "Air Jordan",
+			"name": "Jordan XXXV CQ4227 100",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 400,
+			"discount": 100,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571455_01_sw.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571455_01_sw.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571455_06_sw.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571455_02_sw.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209571455_05_sw.jpg"
+				}
+			],
+			"id": 15,
+			"size_range": [
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 015"
+		},
+		{
+			"brand_name": "Air Jordan",
+			"name": "Jordan XXXV CQ4227 100",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 500,
+			"discount": 30,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209593365_01_wj.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209593365_03_wj.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209593365_02_wj.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209593365_06_wj.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209593365_04_wj.jpg"
+				}
+			],
+			"id": 16,
+			"size_range": [
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 016"
+		},
+		{
+			"brand_name": "Air Jordan",
+			"name": "MAX AURA 3",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 500,
+			"discount": 30,
+			"category": [
+				"basketball"
+			],
+			"collection_slugs": [
+				"air-jordan-1",
+				"goat-clean",
+				"jordan",
+				"jordan-1",
+				"rose-bowl-flea-market",
+				"the-ones-that-started-it-all"
+			],
+			"color": "Black / White",
+			"details": "Black/White-Medium Grey",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209269642_01_plj.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209269642_01_plj.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209269642_03_plj.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209269642_02_plj.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209269642_04_plj.jpg"
+				}
+			],
+			"id": 17,
+			"size_range": [
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 017"
+		}
+	]
+}
