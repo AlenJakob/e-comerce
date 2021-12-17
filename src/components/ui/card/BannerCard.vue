@@ -1,6 +1,11 @@
 <template>
   <div class="banner-card">
     <img class="banner-card__image" :src="banner.img" alt="" />
+    <h2 class="banner-card__title">{{ banner.name }}</h2>
+    <p class="banner-card__category">
+      Category: <i>{{ banner.category[0] }}</i>
+    </p>
+    <p class="banner-card__content">{{ banner.description }}</p>
     <ul class="banner-card__slugs">
       <li
         class="banner-card__slugs-item"
@@ -10,11 +15,6 @@
         <a :href="slug"> #{{ slug }}</a>
       </li>
     </ul>
-    <h2 class="banner-card__title">{{ banner.name }}</h2>
-    <p class="banner-card__category">
-      Category: <i>{{ banner.category[0] }}</i>
-    </p>
-    <p class="banner-card__content">{{ banner.description }}</p>
     <product-button :outline="true" text="Check Out"></product-button>
   </div>
 </template>
@@ -57,7 +57,7 @@ defineProps({
   &__slugs-item {
     white-space: nowrap;
     font-size: 12px;
-    margin: 4px 8px;
+    margin: 4px;
     &:first-child {
       margin-left: 0;
     }
