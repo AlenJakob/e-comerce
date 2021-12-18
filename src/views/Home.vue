@@ -10,6 +10,7 @@
     <div class="slider-box">
       <products-slider></products-slider>
     </div>
+    <loader v-if="$root.loading"></loader>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 import BannerCard from "@/components/ui/card/BannerCard";
 import ProductsSlider from "@/components/ui/ProductsSlider";
 import SHOES_BANNERS from "@/services/banners/index";
+import Loader from "@/components/ui/utils/Loader";
 import { onMounted, reactive } from "vue";
 const state = reactive(SHOES_BANNERS);
 
