@@ -1,6 +1,6 @@
 <template>
   <div>
-    <product-box v-for="item in state.productList.shoes" :key="item">
+    <product-box v-for="item in productListClone" :key="item">
       <template v-slot:gallery>
         <product-gallery
           :images="item.main_image"
@@ -22,6 +22,9 @@ import SHOES_COLLECTION from "@/services/collections/index";
 import { onMounted, reactive } from "vue";
 
 const state = reactive({ productList: SHOES_COLLECTION });
+const productListClone = JSON.parse(
+  JSON.stringify(state.productList.shoes)
+).reverse();
 onMounted(() => {
   console.log();
 });

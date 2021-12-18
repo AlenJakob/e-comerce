@@ -9,18 +9,18 @@ const routes = [
   },
   {
     path: "/collections",
-    name: "collections",
+    name: "Collections",
     component: () =>
       import(/* webpackChunkName: "collections" */ "../views/Collections.vue"),
   },
   {
     path: "/men",
-    name: "men",
+    name: "Men",
     component: () => import(/* webpackChunkName: "men" */ "../views/Men.vue"),
   },
   {
     path: "/women",
-    name: "women",
+    name: "Women",
     component: () =>
       import(/* webpackChunkName: "women" */ "../views/Women.vue"),
   },
@@ -32,14 +32,21 @@ const routes = [
   },
   {
     path: "/contact",
-    name: "contact",
+    name: "Contact",
     component: () =>
       import(/* webpackChunkName: "contact" */ "../views/Contact.vue"),
   },
   {
     path: "/cart",
-    name: "cart",
+    name: "Cart",
     component: () => import(/* webpackChunkName: "cart" */ "../views/Cart.vue"),
+  },
+  {
+    path: "/product/:id",
+    name: "ProductDetails",
+    props: true,
+    component: () =>
+      import(/* webpackChunkName: "cart" */ "../views/ProductDetails.vue"),
   },
 ];
 

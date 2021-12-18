@@ -2,7 +2,13 @@
   <main class="product-details">
     <div class="product-header">
       <h3 class="product-header__brand">{{ itemInfo.brand_name }}</h3>
-      <h1 class="product-header__heading">{{ itemInfo.name }}</h1>
+      <router-link
+        class="product-header__link"
+        :to="{ name: 'ProductDetails', params: { id: itemInfo.id } }"
+        ><h1 class="product-header__heading">
+          {{ itemInfo.name }}
+        </h1></router-link
+      >
       <article class="product-header__content">
         {{ itemInfo.description }}
       </article>
@@ -135,6 +141,9 @@ onMounted(() => {
     letter-spacing: 1.5px;
     margin-bottom: 1rem;
     font-size: 14px;
+  }
+  &__link {
+    text-decoration-color: $c-very-dark-blue;
   }
   &__heading {
     margin-bottom: 2rem;

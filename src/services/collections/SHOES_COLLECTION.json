@@ -189,14 +189,12 @@
 				"air-jordan-1",
 				"goat-clean",
 				"jordan",
-				"jordan-1",
-				"rose-bowl-flea-market",
-				"the-ones-that-started-it-all"
+				"jordan-1"
 			],
-			"color": "Black / White",
-			"details": "Black/White-Medium Grey",
+			"color": "Pink / White",
+			"details": "Pink / White",
 			"gender": [
-				"men"
+				"women"
 			],
 			"main_image": [
 				{
@@ -253,10 +251,10 @@
 				"rose-bowl-flea-market",
 				"the-ones-that-started-it-all"
 			],
-			"color": "Black / White",
-			"details": "Black/White-Medium Grey",
+			"color": "Red / White",
+			"details": "Red / White",
 			"gender": [
-				"men"
+				"women"
 			],
 			"main_image": [
 				{
@@ -415,6 +413,231 @@
 				44
 			],
 			"sku": "555088 017"
+		},
+		{
+			"brand_name": "Adidas",
+			"name": "Terrex Swift Solo FX9323",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 300,
+			"discount": 30,
+			"category": [
+				"daily"
+			],
+			"collection_slugs": [],
+			"color": "Black",
+			"details": "Black",
+			"gender": [
+				"men"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000206767202_01_pa_1.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000206767202_01_pa_1.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000206767202_02_pa_1.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000206767202_03_pa_1.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000206767202_05_pa_1.jpg"
+				}
+			],
+			"id": 18,
+			"size_range": [
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 018"
+		},
+		{
+			"brand_name": "NIKE",
+			"name": "Jordan Zion",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 300,
+			"discount": 30,
+			"category": [
+				"daily",
+				"basketball",
+				"urban"
+			],
+			"collection_slugs": ["air-jordan-1"],
+			"color": "white / pink",
+			"details": "white / pink",
+			"gender": [
+				"women"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209659276_01_kt.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209659276_01_kt.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209659276_03_kt.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209659276_02_kt.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209659276_04_kt.jpg"
+				}
+			],
+			"id": 19,
+			"size_range": [
+				37,
+				38,
+				39,
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 019"
+		},
+		{
+			"brand_name": "NIKE",
+			"name": "Jordan Why Not Zero.3",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 300,
+			"discount": 30,
+			"category": [
+				"daily",
+				"basketball"
+			],
+			"collection_slugs": ["air-jordan-1"],
+			"color": "Multicolor",
+			"details": "Multicolor",
+			"gender": [
+				"women"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209449839_01_fp.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209449839_01_fp.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209449839_03_fp.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209449839_08_fp.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209449839_04_fp.jpg"
+				}
+			],
+			"id": 19,
+			"size_range": [
+				37,
+				38,
+				39,
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 019"
+		},
+		{
+			"brand_name": "NIKE",
+			"name": "Jordan Why Not Zero.3",
+			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
+			"price": 300,
+			"discount": 30,
+			"category": [
+				"daily",
+				"basketball"
+			],
+			"collection_slugs": ["air-jordan-1"],
+			"color": "Multicolor",
+			"details": "Multicolor",
+			"gender": [
+				"women"
+			],
+			"main_image": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658941_01_bs_kopia.jpg"
+				}
+			],
+			"thumbnails": [
+				{
+					"id": 1,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658941_01_bs_kopia.jpg"
+				},
+				{
+					"id": 2,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658941_04_bs_kopia.jpg"
+				},
+				{
+					"id": 3,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658941_02_bs_kopia.jpg"
+				},
+				{
+					"id": 4,
+					"name": "image-product-1",
+					"img": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209658941_05_bs_kopia.jpg"
+				}
+			],
+			"id": 20,
+			"size_range": [
+				37,
+				38,
+				39,
+				41,
+				42,
+				43,
+				44
+			],
+			"sku": "555088 020"
 		}
 	]
 }
