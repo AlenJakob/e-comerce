@@ -5,13 +5,16 @@
         No Products in Cart
       </p>
       <div class="cart-tooltip__product" v-for="item in cart" :key="item.id">
+        <img
+          class="product-details__image"
+          :src="item.main_image[0].img"
+          :alt="item.main_image[0].name"
+        />
         <div class="product-details">
-          <span class="product-details__title"
-            >{{ item.name }}
-            <span style="color: rgb(173, 95, 0)">
-              ( size: {{ item.size }} )</span
-            ></span
-          >
+          <ul class="product-details__title">
+            <li>{{ item.name }}</li>
+            <li style="color: rgb(173, 95, 0)">( size: {{ item.size }} )</li>
+          </ul>
           <ul class="product-details__list">
             <li class="product-details__list-item">${{ item.price / 2 }} x</li>
             <li class="product-details__list-item">
@@ -138,7 +141,11 @@ const closeCart = () => {
   flex-direction: column;
   flex: 1;
   margin: 1rem;
+  &__image {
+    max-width: 60px;
+  }
   &__title {
+    font-size: 14px;
     color: $c-dark-grayish-blue;
     margin-bottom: 0.5rem;
   }
