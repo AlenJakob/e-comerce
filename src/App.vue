@@ -15,14 +15,17 @@
     </div>
     <router-view v-slot="{ Component }"
       ><transition name="route" mode="out-in">
-        <component :is="Component" /></transition
-    ></router-view>
+        <component :is="Component"
+      /></transition>
+      <scroll-button></scroll-button>
+    </router-view>
   </div>
 </template>
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation/TheNavigation";
 import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery";
+import ScrollButton from "@/components/ui/utils/ScrollButton";
 import store from "@/store";
 import { provide, ref } from "vue";
 const isOpen = ref(false);
@@ -41,6 +44,7 @@ body {
   max-width: 1440px;
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
 }
 html {
   overflow: -moz-scrollbars-vertical;
