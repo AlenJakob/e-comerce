@@ -1,5 +1,6 @@
 <template>
   <div>
+    <breadcrumbs :crumbs="crumbs"></breadcrumbs>
     <product-box v-for="item in menShoes" :key="item">
       <template v-slot:gallery>
         <product-gallery
@@ -17,8 +18,9 @@
 <script setup>
 import ProductBox from "@/components/TheBox/ProductBox.vue";
 import ProductGallery from "@/components/ProductGallery";
-import ProductDetails from "@/components/ProductDetails";
 import SHOES_COLLECTION from "@/services/collections/index";
+import ProductDetails from "@/components/ProductDetails";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { reactive, computed } from "vue";
 
 const state = reactive({ productList: SHOES_COLLECTION });

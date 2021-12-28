@@ -8,10 +8,7 @@
         draggable="false"
       />
     </div>
-    <router-link
-      :to="`/product/${productId}`"
-      class="checkout-list-item__content"
-    >
+    <router-link :to="`/${productId}`" class="checkout-list-item__content">
       <div class="content-heading">
         <h2 class="content-heading__brand-name">{{ brandName }}</h2>
         <h3 class="content-heading__product-name">{{ productName }}</h3>
