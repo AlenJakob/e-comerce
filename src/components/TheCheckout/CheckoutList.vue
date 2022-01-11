@@ -32,8 +32,4 @@ const cartList = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-.checkout-list {
-  display: flex;
-}
-</style>
+<style lang="scss" scoped></style>

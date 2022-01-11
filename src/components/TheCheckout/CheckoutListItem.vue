@@ -117,7 +117,7 @@ const priceWithDiscount = DISCOUNT_CALCULATE(
     display: flex;
     flex: 1;
     border-radius: 4px;
-    border: 2px dashed $c-orange;
+    border: 2px dashed rgba($c-accent, 0.2);
     padding: 1px;
   }
   &__box-img {

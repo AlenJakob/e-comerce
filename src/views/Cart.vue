@@ -2,7 +2,10 @@
   <div class="cart">
     // Steps goes here -> step 1 -> step 2 -> step 3
     <div class="cart-box">
-      <checkout-list :cart="cart"></checkout-list>
+      <checkout-list
+        class="checkout-list-container"
+        :cart="cart"
+      ></checkout-list>
       <div class="mock-box"></div>
     </div>
   </div>
@@ -23,6 +26,9 @@ const cart = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+.checkout-list-container {
+  width: 100%;
+}
 .cart-box {
   display: flex;
   justify-content: space-between;
