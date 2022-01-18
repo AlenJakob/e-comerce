@@ -181,7 +181,7 @@
 			"name": "Jordan Zion 1 DA3130 100 ",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
 			"price": 200,
-			"discount": 100,
+			"discount": 10,
 			"category": [
 				"basketball"
 			],
@@ -239,7 +239,7 @@
 			"name": "Jordan XXXV CQ4227 100",
 			"description": "These low-profile sneakers are your perfect companion. Featuring a durable rubber outer withstand everything the weather can offer.",
 			"price": 400,
-			"discount": 100,
+			"discount": 20,
 			"category": [
 				"basketball"
 			],

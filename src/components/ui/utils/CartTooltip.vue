@@ -72,7 +72,6 @@
 </template>
 
 <script setup>
-// TODO: Show only 1 record if the item is te same
 import ProductButton from "@/components/ui/utils/ProductButton";
 import store from "@/store";
 import { computed, defineEmits } from "vue";
@@ -99,7 +98,7 @@ const closeCart = () => {
   top: calc(180px / 2 - 20px);
   background: white;
   box-shadow: 0px 15px 15px rgba($c-black, 0.1);
-  margin: 1rem 0;
+  margin: 4px 0;
   &__container {
     max-height: 300px;
     overflow-y: scroll;
