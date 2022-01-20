@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps } from "vue";
 import { DISCOUNT_CALCULATE } from "@/helpers/calculate/discountCalculator.js";
 import store from "@/store";
 
@@ -87,10 +87,6 @@ const props = defineProps({
   productQty: {
     type: Number,
   },
-});
-
-onMounted(() => {
-  console.log(props.productImage);
 });
 
 const priceWithDiscount = DISCOUNT_CALCULATE(
