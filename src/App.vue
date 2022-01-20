@@ -64,4 +64,7 @@ html {
 .route-leave-active {
   transition: all 0.3s ease-in;
 }
+.button-back {
+  max-width: 200px;
+}
 </style>
