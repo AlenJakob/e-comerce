@@ -51,12 +51,12 @@
         </span>
       </div>
     </div>
-    <product-button
+    <base-button
       @click="closeCart"
       href="/cart"
       class="cart-btn"
       text="checkout"
-    ></product-button>
+    ></base-button>
     <span @click="closeCart" class="cart-tooltip__close"
       ><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15">
         <path
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import ProductButton from "@/components/ui/utils/ProductButton";
+import BaseButton from "@/components/ui/utils/BaseButton";
 import store from "@/store";
 import { computed, defineEmits } from "vue";
 const cart = computed(() => {

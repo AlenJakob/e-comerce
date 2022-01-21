@@ -77,19 +77,19 @@
           </svg>
         </button>
       </div>
-      <product-button
+      <base-button
         @click="callToAction(itemInfo.id, product)"
         class="cta__box-button--spacing"
         text="Add to cart"
         :is-bold="true"
-      ></product-button>
+      ></base-button>
     </div>
   </main>
 </template>
 
 <script setup>
 import { defineProps, ref, reactive, onMounted, inject } from "vue";
-import ProductButton from "@/components/ui/utils/ProductButton";
+import BaseButton from "@/components/ui/utils/BaseButton";
 
 const store = inject("store");
 

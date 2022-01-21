@@ -15,12 +15,12 @@
         <a :href="slug"> #{{ slug }}</a>
       </li>
     </ul>
-    <product-button :outline="true" text="Check Out"></product-button>
+    <base-button :outline="true" text="Check Out"></base-button>
   </div>
 </template>
 
 <script setup>
-import ProductButton from "@/components/ui/utils/ProductButton";
+import BaseButton from "@/components/ui/utils/BaseButton";
 
 import { defineProps } from "vue";
 defineProps({
