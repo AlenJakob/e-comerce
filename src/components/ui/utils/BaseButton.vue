@@ -9,13 +9,7 @@
         <span class="product-cta__button-text">{{ props.text }}</span>
       </router-link>
       <template v-else>
-        <button
-          class="product-cta__button"
-          :class="{
-            'product-button-cta--bold': isBold,
-            'product-cta--outline': outline,
-          }"
-        >
+        <button class="product-cta__button" :class="btnSettings">
           <slot></slot>
           <span class="product-cta__button-text">{{ props.text }}</span>
         </button></template
@@ -25,7 +19,7 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, computed } from "vue";
 const props = defineProps({
   text: {
     type: String,
@@ -46,6 +40,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  uppercase: {
+    type: Boolean,
+    default: true,
+  },
+});
+
+const btnSettings = computed(() => {
+  return {
+    "product-cta-button--bold": props.isBold,
+    "product-cta--outline": props.outline,
+    "product-cta-button--uppercase": props.isBold,
+  };
 });
 </script>
 
@@ -59,7 +65,6 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     flex: 1;
-    margin: 2rem 0;
     padding: 0;
     background: $c-orange;
     color: $c-white;
@@ -70,9 +75,6 @@ const props = defineProps({
     cursor: pointer;
     &:hover {
       background: rgba($c-orange, 0.9);
-    }
-    &--bold {
-      font-weight: $fw-bold;
     }
     &--link {
       display: flex;
@@ -91,6 +93,12 @@ const props = defineProps({
   }
   &--medium {
     height: 48px;
+  }
+  &--bold {
+    font-weight: $fw-bold;
+  }
+  &--uppercase {
+    text-transform: uppercase;
   }
 }
 .product-cta--outline {

@@ -1,5 +1,5 @@
 <template>
-  <li class="product-slider-item">
+  <li class="product-slider-item" d>
     <img
       class="product-slider-item__slide-img"
       alt="tmp alt please put something here"
@@ -11,13 +11,13 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, eos
         veniam! Expedita?
       </p>
-      <product-button text="checkout"></product-button>
+      <base-button text="checkout"></base-button>
     </div>
   </li>
 </template>
 
 <script setup>
-import ProductButton from "@/components/ui/utils/ProductButton";
+import BaseButton from "@/components/ui/utils/BaseButton";
 </script>
 <style lang="scss" scoped>
 .product-slider-item {
@@ -30,6 +30,7 @@ import ProductButton from "@/components/ui/utils/ProductButton";
   }
   &__content-text {
     color: #68707d;
+    margin-bottom: 1rem;
   }
 }
 </style>
