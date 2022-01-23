@@ -81,7 +81,6 @@
         @click="callToAction(itemInfo.id, product)"
         class="cta__box-button--spacing"
         text="Add to cart"
-        :is-bold="true"
       ></base-button>
     </div>
   </main>

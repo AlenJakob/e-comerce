@@ -1,6 +1,6 @@
 <template>
   <div class="cart">
-    // Steps goes here -> step 1 -> step 2 -> step 3
+    <!-- // Steps goes here -> step 1 -> step 2 -> step 3 -->
     <div class="cart-box">
       <checkout-list
         class="checkout-list-container"

@@ -1,5 +1,5 @@
 <template>
-  <li class="product-slider-item">
+  <li class="product-slider-item" d>
     <img
       class="product-slider-item__slide-img"
       alt="tmp alt please put something here"
@@ -30,6 +30,7 @@ import BaseButton from "@/components/ui/utils/BaseButton";
   }
   &__content-text {
     color: #68707d;
+    margin-bottom: 1rem;
   }
 }
 </style>

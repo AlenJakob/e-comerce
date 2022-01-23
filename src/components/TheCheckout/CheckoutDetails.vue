@@ -1,10 +1,9 @@
 <template>
   <div class="cart-details">
     <div class="cart-details__info">
-      <h3>total price</h3>
-      <span v-show="total">
-        <h3>{{ total }} $</h3></span
-      >
+      <h3 class="cart-details__info-value">
+        total price: <span v-show="total">{{ total }} $</span>
+      </h3>
     </div>
     <base-button :is-bold="true" uppercase text="next"></base-button>
   </div>
@@ -28,15 +27,18 @@ const total = computed(() => {
 
 <style lang="scss" scoped>
 .cart-details {
-  display: flex;
-  flex-direction: column;
   border-radius: 4px;
   &__info {
+    display: flex;
     box-sizing: border-box;
     padding: 0.5rem;
-    background: rgba($c-accent, 0.1);
+    margin-bottom: 1rem;
+    border: 2px solid rgba($c-accent, 0.2);
     width: 350px;
-    height: 200px;
+    height: 100px;
+  }
+  &__info-value {
+    margin: auto;
   }
 }
 </style>
