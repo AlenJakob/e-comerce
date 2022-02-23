@@ -13,16 +13,25 @@
         ></product-full-screen-gallery>
       </transition>
     </div>
-    <router-view v-slot="{ Component }"
-      ><transition name="route" mode="out-in">
-        <component :is="Component" /></transition
-    ></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="route" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <transition name="route" mode="in-out">
+      <message-box
+        :message-status="store.state.messageStatus"
+        :message-state="store.state.messageState"
+        :message-text="store.state.messageText"
+      ></message-box>
+    </transition>
   </div>
 </template>
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation/TheNavigation";
 import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery";
+import MessageBox from "@/components/ui/MessageBox";
 import store from "@/store";
 import { provide, ref } from "vue";
 const isOpen = ref(false);
@@ -41,6 +50,7 @@ body {
   max-width: 1440px;
   max-width: 1100px;
   margin: 0 auto;
+  overflow: hidden;
 }
 html {
   overflow: -moz-scrollbars-vertical;
@@ -52,7 +62,7 @@ html {
 /* route transitions */
 .route-enter-from {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-100px);
 }
 .route-enter-active {
   transition: all 0.3s ease-out;

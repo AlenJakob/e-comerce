@@ -6,7 +6,7 @@
         class="checkout-list-container"
         :cart="cart"
       ></checkout-list>
-      <checkout-details :total-price="totalPrice"></checkout-details>
+      <checkout-details :total-price="totalPrice.price"></checkout-details>
     </div>
   </div>
 </template>

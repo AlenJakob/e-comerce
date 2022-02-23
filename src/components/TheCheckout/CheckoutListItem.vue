@@ -23,9 +23,9 @@
           </span>
         </div>
         <div class="content-pricing__box">
-          <span class="content-pricing__product-discount-price"
-            >${{ priceWithDiscount }} x {{ productQty }}</span
-          >
+          <span class="content-pricing__product-discount-price">
+            ${{ priceWithDiscount }} x {{ productQty }}
+          </span>
           <span class="content-pricing__product-calculated-price">
             Total Price: <b>${{ priceWithDiscount * productQty }}</b>
           </span>
