@@ -88,6 +88,9 @@ const closeCart = () => {
 </script>
 <style scoped lang="scss">
 .cart-tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   z-index: 1000;
   box-sizing: border-box;
   position: absolute;

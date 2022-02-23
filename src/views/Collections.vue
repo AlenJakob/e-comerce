@@ -1,6 +1,6 @@
 <template>
   <div>
-    <breadcrumbs :crumbs="crumbs"></breadcrumbs>
+    <breadcrumbs></breadcrumbs>
     <product-box v-for="item in productListClone" :key="item">
       <template v-slot:gallery>
         <product-gallery
