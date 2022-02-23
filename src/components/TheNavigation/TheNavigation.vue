@@ -16,8 +16,8 @@
         :key="link.id"
         :to="link.path"
         class="the-navigation__menu-link"
-        >{{ link.name }}</router-link
-      >
+        >{{ link.name }}
+      </router-link>
     </nav>
     <div class="the-navigation__cta">
       <span class="cart" @click="toggleCart">
@@ -35,7 +35,11 @@
         </svg>
         <span class="cart__quantity">{{ itemsInCart }}</span>
       </span>
-      <span class="img cart__avatar"> </span>
+      <span class="img cart__avatar"></span>
+      <base-hamburger
+        @click="toggleButton"
+        class="cart__hamburger"
+      ></base-hamburger>
       <cart-tooltip @close-cart="toggleCart" v-if="cartVisible"></cart-tooltip>
     </div>
   </div>
@@ -44,15 +48,26 @@
 <script setup>
 import ScreenOverlay from "@/components/ui/utils/ScreenOverlay";
 import CartTooltip from "@/components/ui/utils/CartTooltip";
+import BaseHamburger from "@/components/ui/utils/BaseHamburger";
 import consts from "@/services/index";
 import store from "@/store";
-import { computed, ref } from "vue";
+import { computed, ref, defineEmits } from "vue";
+
 const cartVisible = ref(false);
 const itemsInCart = computed(() => {
   return store.state.cart.reduce((acc, val) => (acc += val.quantity), 0);
 });
 const toggleCart = () => {
   cartVisible.value = !cartVisible.value;
+};
+
+const isOpen = ref(false);
+
+const emit = defineEmits(["toggle-menu"]);
+
+const toggleButton = () => {
+  isOpen.value = !isOpen.value;
+  emit("toggle-menu", isOpen.value);
 };
 </script>
 
@@ -99,7 +114,7 @@ const toggleCart = () => {
   }
 }
 .cart {
-  z-index: 10000;
+  z-index: 1000;
   height: 50px;
   display: flex;
   align-items: center;
@@ -118,6 +133,9 @@ const toggleCart = () => {
     background: $c-accent;
     width: 28px;
     padding: 1px;
+  }
+  &__avatar {
+    margin-right: 20px;
   }
 }
 .img {
