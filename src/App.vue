@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <the-navigation @toggle-menu="toggleList"></the-navigation>
+    <the-navigation @toggle-menu="setVisibleList"></the-navigation>
     <div class="home">
       <transition name="fade">
         <div class="overlay" v-if="isOpen" @click="manageGallery"></div>
@@ -26,7 +26,9 @@
       ></message-box>
     </transition>
     <transition name="route" mode="in-out">
-      <base-menu-list v-if="isListOpen"></base-menu-list>
+      <base-hamburger-menu
+        v-if="store.state.overlayState"
+      ></base-hamburger-menu>
     </transition>
   </div>
 </template>
@@ -35,16 +37,11 @@
 import TheNavigation from "@/components/TheNavigation/TheNavigation";
 import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery";
 import MessageBox from "@/components/ui/MessageBox";
-import BaseMenuList from "@/components/ui/utils/BaseMenuList";
+import BaseHamburgerMenu from "@/components/ui/utils/BaseHamburgerMenu";
 import store from "@/store";
-import { provide, ref } from "vue";
+import { provide } from "vue";
 
-const isListOpen = ref(false);
 provide("store", store);
-
-const toggleList = (isOpen) => {
-  isListOpen.value = isOpen;
-};
 </script>
 <style lang="scss">
 * {
@@ -56,6 +53,7 @@ body {
   margin: 0;
 }
 .app {
+  min-height: 100vw;
   max-width: 1440px;
   max-width: 1100px;
   margin: 0 auto;

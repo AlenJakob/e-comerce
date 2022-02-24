@@ -1,11 +1,13 @@
 import { reactive } from "vue";
 import SHOES_COLLECTION from "@/services/collections/index";
+
 const state = reactive({
   cart: [],
   totalProducts: 0,
   messageStatus: false,
   messageText: "",
   messageState: "",
+  overlayState: false,
 });
 
 const methods = {
@@ -23,6 +25,7 @@ const methods = {
     }
     state.cart.push(fullyLoadedProduct);
   },
+
   //while Back-end change - TODO: have to remove product base on id
   removeProduct(id, size) {
     state.cart = state.cart.filter((obj) => {
@@ -30,6 +33,7 @@ const methods = {
     });
     this.showMessage("Product has been removed from cart", "danger");
   },
+
   showMessage(txt = "", msgState = "") {
     state.messageText = txt;
     state.messageState = msgState;
@@ -37,6 +41,10 @@ const methods = {
     setTimeout(() => {
       state.messageStatus = false;
     }, 1000);
+  },
+
+  toggleMobileMenu() {
+    state.overlayState = !state.overlayState;
   },
 };
 

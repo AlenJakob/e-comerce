@@ -16,7 +16,8 @@
         :key="link.id"
         :to="link.path"
         class="the-navigation__menu-link"
-        >{{ link.name }}
+      >
+        {{ link.name }}
       </router-link>
     </nav>
     <div class="the-navigation__cta">
@@ -37,7 +38,7 @@
       </span>
       <span class="img cart__avatar"></span>
       <base-hamburger
-        @click="toggleButton"
+        @click="showMenu"
         class="cart__hamburger"
       ></base-hamburger>
       <cart-tooltip @close-cart="toggleCart" v-if="cartVisible"></cart-tooltip>
@@ -51,23 +52,20 @@ import CartTooltip from "@/components/ui/utils/CartTooltip";
 import BaseHamburger from "@/components/ui/utils/BaseHamburger";
 import consts from "@/services/index";
 import store from "@/store";
-import { computed, ref, defineEmits } from "vue";
+import { computed, ref } from "vue";
 
 const cartVisible = ref(false);
+
 const itemsInCart = computed(() => {
   return store.state.cart.reduce((acc, val) => (acc += val.quantity), 0);
 });
+
 const toggleCart = () => {
   cartVisible.value = !cartVisible.value;
 };
 
-const isOpen = ref(false);
-
-const emit = defineEmits(["toggle-menu"]);
-
-const toggleButton = () => {
-  isOpen.value = !isOpen.value;
-  emit("toggle-menu", isOpen.value);
+const showMenu = () => {
+  store.methods.toggleMobileMenu();
 };
 </script>
 

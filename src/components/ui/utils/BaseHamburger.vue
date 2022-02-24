@@ -1,5 +1,5 @@
 <template>
-  <div class="base-hamburger" @click="toggleButton">
+  <div class="base-hamburger">
     <svg viewBox="0 0 100 80" width="40" height="40">
       <rect class="base-hamburger__rect" width="100" height="20" rx="8"></rect>
       <rect
@@ -19,19 +19,6 @@
     </svg>
   </div>
 </template>
-
-<script setup>
-import { ref, defineEmits } from "vue";
-
-const isOpen = ref(false);
-
-const emit = defineEmits(["toggle-menu"]);
-
-const toggleButton = () => {
-  isOpen.value = !isOpen.value;
-  emit("toggle-menu", isOpen.value);
-};
-</script>
 
 <style lang="scss" scoped>
 .base-hamburger {
