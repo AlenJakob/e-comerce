@@ -478,7 +478,9 @@
 				"basketball",
 				"urban"
 			],
-			"collection_slugs": ["air-jordan-1"],
+			"collection_slugs": [
+				"air-jordan-1"
+			],
 			"color": "white / pink",
 			"details": "white / pink",
 			"gender": [
@@ -535,7 +537,9 @@
 				"daily",
 				"basketball"
 			],
-			"collection_slugs": ["air-jordan-1"],
+			"collection_slugs": [
+				"air-jordan-1"
+			],
 			"color": "Multicolor",
 			"details": "Multicolor",
 			"gender": [
@@ -592,7 +596,9 @@
 				"daily",
 				"basketball"
 			],
-			"collection_slugs": ["air-jordan-1"],
+			"collection_slugs": [
+				"air-jordan-1"
+			],
 			"color": "Multicolor",
 			"details": "Multicolor",
 			"gender": [

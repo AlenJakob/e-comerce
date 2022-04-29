@@ -10,6 +10,6 @@
 //       console.log(err);
 //     });
 // }
-import SHOES_COLLECTION from "./SHOES_COLLECTION";
+import SHOES_COLLECTION from "./SHOES_COLLECTION"
 
-export default SHOES_COLLECTION;
+export default SHOES_COLLECTION

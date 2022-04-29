@@ -8,10 +8,10 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  isOpen: {
-    type: Boolean,
-    default: false,
-  },
+	isOpen: {
+		type: Boolean,
+		default: false,
+	},
 });
 </script>
 <style lang="scss" scoped>

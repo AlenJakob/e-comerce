@@ -1,61 +1,61 @@
 <template>
-  <div class="spinner" :class="{ 'spinner--off': loaderVisible }">
-    <div class="ball"></div>
-  </div>
+	<div class="spinner" :class="{ 'spinner--off': loaderVisible }">
+		<div class="ball"></div>
+	</div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-const loaderVisible = ref(false);
+import { ref } from "vue"
+const loaderVisible = ref(false)
 </script>
 <style lang="scss" scoped>
 .spinner--off {
-  display: none;
+	display: none;
 }
 .spinner {
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	text-align: center;
 }
 
 .ball {
-  width: 40px;
-  height: 40px;
-  background-color: $c-orange;
-  border-radius: 50%;
-  display: inline-block;
-  animation: motion 3s infinite;
+	width: 40px;
+	height: 40px;
+	background-color: $c-orange;
+	border-radius: 50%;
+	display: inline-block;
+	animation: motion 3s infinite;
 }
 
 p {
-  color: #fff;
-  margin-top: 5px;
-  font-family: sans-serif;
-  letter-spacing: 3px;
-  font-size: 10px;
+	color: #fff;
+	margin-top: 5px;
+	font-family: sans-serif;
+	letter-spacing: 3px;
+	font-size: 10px;
 }
 
 @keyframes motion {
-  0% {
-    transform: translateX(0) scale(1);
-  }
-  25% {
-    transform: translateX(-50px) scale(0.3);
-  }
-  50% {
-    transform: translateX(0) scale(1);
-  }
-  75% {
-    transform: translateX(50px) scale(0.3);
-  }
-  100% {
-    transform: translateX(0) scale(1);
-  }
+	0% {
+		transform: translateX(0) scale(1);
+	}
+	25% {
+		transform: translateX(-50px) scale(0.3);
+	}
+	50% {
+		transform: translateX(0) scale(1);
+	}
+	75% {
+		transform: translateX(50px) scale(0.3);
+	}
+	100% {
+		transform: translateX(0) scale(1);
+	}
 }
 </style>
