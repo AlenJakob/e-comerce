@@ -1,5 +1,5 @@
 <template>
-	<li class="product-slider-item" d>
+	<li class="product-slider-item">
 		<img
 			class="product-slider-item__slide-img"
 			alt="tmp alt please put something here"
@@ -23,6 +23,7 @@ import BaseButton from "@/components/ui/utils/BaseButton"
 .product-slider-item {
 	&__slide-img {
 		width: 190px;
+		pointer-events: none;
 	}
 	&__content-title {
 		margin: 1rem 0;

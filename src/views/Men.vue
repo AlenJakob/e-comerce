@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<breadcrumbs :crumbs="crumbs"></breadcrumbs>
+		<breadcrumbs></breadcrumbs>
 		<product-box v-for="item in menShoes" :key="item">
 			<template v-slot:gallery>
 				<product-gallery
@@ -28,4 +28,5 @@ const state = reactive({ productList: SHOES_COLLECTION })
 const menShoes = computed(() => {
 	return state.productList.shoes.filter((item) => item.gender.includes("men"))
 })
+
 </script>

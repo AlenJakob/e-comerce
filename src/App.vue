@@ -39,7 +39,10 @@ import ProductFullScreenGallery from "@/components/ui/ProductFullScreenGallery"
 import MessageBox from "@/components/ui/MessageBox"
 import BaseHamburgerMenu from "@/components/ui/utils/BaseHamburgerMenu"
 import store from "@/store"
-import { provide } from "vue"
+import { provide, ref } from "vue"
+
+const setVisibleList = ref(true)
+const isOpen = ref(false)
 
 provide("store", store)
 </script>

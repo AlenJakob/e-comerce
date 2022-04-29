@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<breadcrumbs :crumbs="crumbs"></breadcrumbs>
+		<breadcrumbs></breadcrumbs>
 		<product-box v-for="item in womenShoes" :key="item">
 			<template v-slot:gallery>
 				<product-gallery

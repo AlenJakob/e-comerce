@@ -19,7 +19,7 @@ import ProductSliderItem from "@/components/ui/ProductSliderItem"
 onMounted(async () => {
 	const glide = await new Glide(".glide", {
 		gap: 50,
-		perView: 5,
+		perView: 4,
 		type: "carousel"
 	})
 	glide.mount()

@@ -50,10 +50,6 @@ const removeSlash = (url) => {
 }
 const route = useRoute()
 const props = defineProps({
-	crumbs: {
-		type: Array,
-		default: () => []
-	},
 	lastRoute: {
 		type: String,
 		default: ""
