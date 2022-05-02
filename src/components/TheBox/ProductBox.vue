@@ -10,6 +10,7 @@
 	display: flex;
 	gap: 20px;
 	padding: 1rem 2rem;
-	margin-bottom: 4rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid lighten($c-black, 90%);
 }
 </style>

@@ -1,29 +1,36 @@
 <template>
 	<li class="product-slider-item">
-		<img
-			class="product-slider-item__slide-img"
-			alt="tmp alt please put something here"
-			src="https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209915907_01_plj.jpg"
-		/>
-		<div class="product-slider-item__content">
-			<h3 class="product-slider-item__content-title">Title shoes</h3>
-			<p class="product-slider-item__content-text">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
-				eos veniam! Expedita?
-			</p>
-			<base-button text="checkout"></base-button>
+		<div class="product-slider-item__slide">
+			<img
+				class="product-slider-item__slide-img"
+				alt="tmp alt please put something here"
+				src="https://www.eobuwie.com.pl/media/catalog/product/cache/image/800x800/0/0/0000209915907_01_plj.jpg"
+			/>
+			<div class="product-slider-item__content">
+				<h3 class="product-slider-item__content-title">Title shoes</h3>
+				<p class="product-slider-item__content-text">
+					Lorem ipsum, dolor sit amet consectetur adipisicings elit. Ipsam, eos
+					veniam! Expedita?
+				</p>
+				<base-button text="checkout"></base-button>
+			</div>
 		</div>
 	</li>
 </template>
 
 <script setup>
-import BaseButton from "@/components/ui/utils/BaseButton"
+import BaseButton from "@/components/ui/utils/BaseButton";
+
 </script>
 <style lang="scss" scoped>
 .product-slider-item {
+	user-select: none;
 	&__slide-img {
 		width: 190px;
 		pointer-events: none;
+	}
+	&__slide {
+		padding: 0 5px;
 	}
 	&__content-title {
 		margin: 1rem 0;

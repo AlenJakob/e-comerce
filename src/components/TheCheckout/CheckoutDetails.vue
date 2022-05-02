@@ -2,7 +2,7 @@
 	<div class="cart-details">
 		<div class="cart-details__info">
 			<h3 class="cart-details__info-value">
-				total price: <span v-show="total">{{ total }} $</span>
+				total price: <span>{{ totalPrice }} $</span>
 			</h3>
 		</div>
 		<base-button :is-bold="true" uppercase text="next"></base-button>
@@ -10,24 +10,21 @@
 </template>
 
 <script setup>
-import BaseButton from "@/components/ui/utils/BaseButton"
-import { defineProps, computed } from "vue"
+import { defineProps } from "vue";
+import BaseButton from "@/components/ui/utils/BaseButton";
 
-const props = defineProps({
+defineProps({
 	totalPrice: {
 		type: Number,
-		default: 0
-	}
-})
-
-const total = computed(() => {
-	return props.totalPrice.value
-})
+		default: 0,
+	},
+});
 </script>
 
 <style lang="scss" scoped>
 .cart-details {
 	border-radius: 4px;
+
 	&__info {
 		display: flex;
 		box-sizing: border-box;
@@ -37,6 +34,7 @@ const total = computed(() => {
 		width: 350px;
 		height: 100px;
 	}
+
 	&__info-value {
 		margin: auto;
 	}

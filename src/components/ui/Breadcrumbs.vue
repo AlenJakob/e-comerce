@@ -78,7 +78,7 @@ const breadCrumblist = computed(() => {
 // TODO STYLE THE BREADCRUMBS
 .breadcrumbs {
 	display: flex;
-	padding: 2rem;
+	padding: 1rem;
 	align-items: center;
 	&__item {
 		display: flex;

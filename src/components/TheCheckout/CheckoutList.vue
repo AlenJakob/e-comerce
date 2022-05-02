@@ -2,7 +2,7 @@
 	<div>
 		<checkout-list-item
 			class="checkout-list"
-			v-for="item in cartList"
+			v-for="item in cart"
 			:key="`item-${item}`"
 			:product-name="item.name"
 			:brand-name="item.brand_name"
@@ -18,18 +18,16 @@
 
 <script setup>
 import CheckoutListItem from "./CheckoutListItem.vue"
-import { defineProps, computed } from "vue"
+import { defineProps } from "vue"
 
-const props = defineProps({
+defineProps({
 	cart: {
 		type: Array,
 		default: () => []
 	}
 })
 
-const cartList = computed(() => {
-	return props.cart
-})
+
 </script>
 
 <style lang="scss" scoped></style>

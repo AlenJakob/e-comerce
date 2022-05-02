@@ -1,41 +1,27 @@
 <template>
-	<div class="glide">
+	<!-- <div class="glide">
 		<div class="glide__track" data-glide-el="track">
-			<ul class="glide__slides">
-				<product-slider-item
-					v-for="n in 25"
-					:key="n"
-				></product-slider-item>
-			</ul>
+			<ul class="glide__slides"> -->
+
+	<agile :options="sliderSettings" draggable="false">
+			<product-slider-item v-for="n in 25" :key="n"></product-slider-item>
+	</agile>
+	<!-- </ul>
 		</div>
-	</div>
+	</div> -->
 </template>
 
 <script setup>
-import { onMounted } from "vue"
-import Glide from "@glidejs/glide/dist/glide.esm"
-import ProductSliderItem from "@/components/ui/ProductSliderItem"
+import { VueAgile as agile } from "vue-agile";
+import { ref } from "vue";
+import ProductSliderItem from "@/components/ui/ProductSliderItem";
 
-onMounted(async () => {
-	const glide = await new Glide(".glide", {
-		gap: 50,
-		perView: 4,
-		type: "carousel"
-	})
-	glide.mount()
-})
+const sliderSettings = ref({
+	autoplay: false,
+	autoplaySpeed: 5000,
+	slidesToShow: 4,
+	dots: false,
+	initialSlide: 0,
+	centerMode: true,
+});
 </script>
-<style lang="scss" scoped>
-.glide {
-	overflow: hidden;
-	cursor: grab;
-	&:active {
-		cursor: grabbing;
-	}
-}
-.glide__slides {
-	display: flex;
-	width: 100%;
-	max-width: 200px;
-}
-</style>

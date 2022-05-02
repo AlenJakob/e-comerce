@@ -16,18 +16,15 @@
 </template>
 
 <script setup>
-import ProductBox from "@/components/TheBox/ProductBox.vue"
-import ProductGallery from "@/components/ProductGallery"
-import ProductDetails from "@/components/ProductDetails"
-import Breadcrumbs from "@/components/ui/Breadcrumbs"
-import SHOES_COLLECTION from "@/services/collections/index"
-import { onMounted, reactive } from "vue"
+import ProductBox from "@/components/TheBox/ProductBox.vue";
+import ProductGallery from "@/components/ProductGallery";
+import ProductDetails from "@/components/ProductDetails";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import SHOES_COLLECTION from "@/services/collections/index";
+import { reactive } from "vue";
 
-const state = reactive({ productList: SHOES_COLLECTION })
+const state = reactive({ productList: SHOES_COLLECTION });
 const productListClone = JSON.parse(
 	JSON.stringify(state.productList.shoes)
-).reverse()
-onMounted(() => {
-	console.log()
-})
+).reverse();
 </script>

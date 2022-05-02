@@ -1,7 +1,11 @@
 <template>
 	<main class="product-details">
 		<div class="product-header">
-			<h3 class="product-header__brand">{{ itemInfo.brand_name }}</h3>
+			<h3 class="product-header__brand">
+				<span class="product-summary__percent"> -{{ itemInfo.discount }}%</span>
+				{{ itemInfo.brand_name }}
+			</h3>
+
 			<router-link
 				class="product-header__link"
 				:to="{ name: 'ProductDetails', params: { id: itemInfo.id } }"
@@ -15,7 +19,9 @@
 		</div>
 
 		<div class="product-summary">
-			<p class="product-summary__price">${{ itemInfo.price / 2 }}.00</p>
+			<p class="product-summary__price">
+				${{ DISCOUNT_CALCULATE(itemInfo.discount, itemInfo.price) }}.00
+			</p>
 			<p class="product-summary__discount">${{ itemInfo.price }}.00</p>
 		</div>
 
@@ -23,7 +29,7 @@
 			<button
 				class="product-details__btn-size"
 				:class="{
-					'product-details__btn-size--active': index === sizePicker
+					'product-details__btn-size--active': index === sizePicker,
 				}"
 				v-for="(size, index) in itemInfo.size_range"
 				:key="index"
@@ -33,9 +39,7 @@
 			</button>
 			<p class="product-details__color">
 				<span class="product-details__color-text">color:</span>
-				<span class="product-details__color-label">{{
-					itemInfo.color
-				}}</span>
+				<span class="product-details__color-label">{{ itemInfo.color }}</span>
 			</p>
 		</div>
 
@@ -57,18 +61,10 @@
 								id="a"
 							/>
 						</defs>
-						<use
-							fill="#FF7E1B"
-							fill-rule="nonzero"
-							xlink:href="#a"
-						/>
+						<use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
 					</svg>
 				</button>
-				<input
-					disabled
-					class="cta__box__value"
-					:value="product.quantity"
-				/>
+				<input disabled class="cta__box__value" :value="product.quantity" />
 				<button
 					@click="addQtyProduct"
 					class="cta__box__button cta__box__button--border-left-none"
@@ -85,11 +81,7 @@
 								id="b"
 							/>
 						</defs>
-						<use
-							fill="#FF7E1B"
-							fill-rule="nonzero"
-							xlink:href="#b"
-						/>
+						<use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
 					</svg>
 				</button>
 			</div>
@@ -103,46 +95,44 @@
 </template>
 
 <script setup>
-import { defineProps, ref, reactive, onMounted, inject } from "vue"
-import BaseButton from "@/components/ui/utils/BaseButton"
+import { defineProps, ref, reactive, inject } from "vue";
+import BaseButton from "@/components/ui/utils/BaseButton";
+import { DISCOUNT_CALCULATE } from "@/helpers/calculate/discountCalculator.js";
 
-const store = inject("store")
+const store = inject("store");
 
 const props = defineProps({
 	itemInfo: {
 		type: Object,
-		default: () => ({})
-	}
-})
+		default: () => ({}),
+	},
+});
 
-const sizePicker = ref(0)
+const sizePicker = ref(0);
 
 const product = reactive({
 	size: props.itemInfo.size_range[0],
-	quantity: 1
-})
+	quantity: 1,
+});
 
 const setShoeDetails = (index, size) => {
-	product.size = size
-	sizePicker.value = index
-}
+	product.size = size;
+	sizePicker.value = index;
+};
 const addQtyProduct = () => {
-	product.quantity++
-}
+	product.quantity++;
+};
 const removeQtyProduct = () => {
 	if (product.quantity <= 1) {
-		return
+		return;
 	}
-	product.quantity--
-}
+	product.quantity--;
+};
 
 const callToAction = (id, product) => {
-	store.methods.addProduct(id, product)
-	product.quantity = 1
-}
-onMounted(() => {
-	//   console.log("fom details product");
-})
+	store.methods.addProduct(id, product);
+	product.quantity = 1;
+};
 </script>
 <style lang="scss" scoped>
 .product-details {
@@ -150,28 +140,29 @@ onMounted(() => {
 }
 .product-header {
 	&__brand {
-		color: $c-orange;
+		color: lighten($c-orange, 10%);
 		font-weight: $fw-bold;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
-		margin-bottom: 1rem;
+		margin-bottom: 10px;
 		font-size: 14px;
 	}
 	&__link {
 		text-decoration-color: $c-very-dark-blue;
 	}
 	&__heading {
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		color: $c-very-dark-blue;
 	}
 	&__content {
 		color: $c-dark-grayish-blue;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		line-height: 1.5rem;
 	}
 }
 .product-summary {
-	margin-bottom: 2rem;
+	display: flex;
+	margin-bottom: 1rem;
 
 	&__price {
 		font-size: 2rem;
@@ -179,6 +170,7 @@ onMounted(() => {
 		color: $c-very-dark-blue;
 		letter-spacing: 1px;
 		margin-bottom: 0.5rem;
+		margin-right: 12px;
 	}
 	&__discount {
 		font-size: 1rem;
@@ -186,6 +178,13 @@ onMounted(() => {
 		color: $c-grayish-blue;
 		letter-spacing: 1px;
 		text-decoration: line-through;
+	}
+	&__percent {
+		font-size: 1rem;
+		font-weight: $fw-bold;
+		color: $c-success;
+		letter-spacing: 1px;
+		border: 2px dashed rgba($c-accent, 0.5);
 	}
 }
 // .product-details__btn-size--active // active product of marked shoe size
