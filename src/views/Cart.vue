@@ -6,33 +6,21 @@
 				class="checkout-list-container"
 				:cart="cart"
 			></checkout-list>
-			<checkout-details
-				:total-price="totalPrice.price"
-			></checkout-details>
+			<checkout-details :total-price="totalPrice"></checkout-details>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import store from "@/store"
-import { computed, onMounted, reactive } from "vue"
-import CheckoutList from "@/components/TheCheckout/CheckoutList"
-import CheckoutDetails from "@/components/TheCheckout/CheckoutDetails"
-import { DISCOUNT_CALCULATE } from "@/helpers/calculate/discountCalculator.js"
+import { computed } from "vue";
+import CheckoutList from "@/components/TheCheckout/CheckoutList";
+import CheckoutDetails from "@/components/TheCheckout/CheckoutDetails";
+import store from "@/store";
 
-const totalPrice = reactive({ price: 0 })
-
-const cart = computed(() => {
-	return store.state.cart
-})
-onMounted(() => {
-	const allProductsPrices = store.state.cart.map(
-		(prod) => DISCOUNT_CALCULATE(prod.discount, prod.price) * prod.quantity
-	)
-	if (allProductsPrices.length) {
-		totalPrice.value = allProductsPrices.reduce((acc, val) => (acc += val))
-	}
-})
+const cart = computed(()=> store.state.cart)
+const totalPrice = computed(() => {
+	return store.state.totalPrice;
+});
 </script>
 
 <style lang="scss" scoped>

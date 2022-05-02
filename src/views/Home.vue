@@ -19,12 +19,9 @@ import BannerCard from "@/components/ui/card/BannerCard"
 import ProductsSlider from "@/components/ui/ProductsSlider"
 import SHOES_BANNERS from "@/services/banners/index"
 import Loader from "@/components/ui/utils/Loader"
-import { onMounted, reactive } from "vue"
+import {  reactive } from "vue"
 const state = reactive(SHOES_BANNERS)
 
-onMounted(() => {
-	console.log(state.banners.banners)
-})
 </script>
 
 <style lang="scss" scoped>

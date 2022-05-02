@@ -4,11 +4,7 @@
 			<p v-if="!productsInCart" class="cart-tooltip__info">
 				No Products in Cart
 			</p>
-			<div
-				class="cart-tooltip__product"
-				v-for="item in cart"
-				:key="item.id"
-			>
+			<div class="cart-tooltip__product" v-for="item in cart" :key="item.id">
 				<img
 					class="product-details__image"
 					:src="item.main_image[0].img"
@@ -17,24 +13,25 @@
 				<div class="product-details">
 					<ul class="product-details__title">
 						<li>{{ item.name }}</li>
-						<li style="color: rgb(173, 95, 0)">
-							( size: {{ item.size }} )
-						</li>
+						<li style="color: rgb(173, 95, 0)">( size: {{ item.size }} )</li>
 					</ul>
 					<ul class="product-details__list">
 						<li class="product-details__list-item">
-							${{ item.price / 2 }} x
+							${{ discountPrice(item.discount, item.price) }} x
 						</li>
 						<li class="product-details__list-item">
 							{{ item.quantity }}
 						</li>
 						<li
-							class="
-								product-details__list-item
-								product-details__list-item--bold-price
-							"
+							class="product-details__list-item product-details__list-item--bold-price"
 						>
-							${{ (item.price / 2) * item.quantity }}
+							${{
+								multiplePriceByQuantity(
+									item.discount,
+									item.price,
+									item.quantity
+								)
+							}}
 						</li>
 					</ul>
 				</div>
@@ -54,14 +51,13 @@
 								id="a"
 							/>
 						</defs>
-						<use
-							fill="#C3CAD9"
-							fill-rule="nonzero"
-							xlink:href="#a"
-						/>
+						<use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
 					</svg>
 				</span>
 			</div>
+		</div>
+		<div class="cart-tooltip__total-price">
+			Total Price: {{ totalPrice }}.00$
 		</div>
 		<base-button
 			@click="closeCart"
@@ -78,25 +74,43 @@
         7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
 					fill="#69707D"
 					fill-rule="evenodd"
-				/></svg
-		></span>
+				/>
+			</svg>
+		</span>
 	</div>
 </template>
 
 <script setup>
-import BaseButton from "@/components/ui/utils/BaseButton"
-import store from "@/store"
-import { computed, defineEmits } from "vue"
+import BaseButton from "@/components/ui/utils/BaseButton";
+import store from "@/store";
+import { computed, defineEmits } from "vue";
+import { DISCOUNT_CALCULATE } from "@/helpers/calculate/discountCalculator.js";
+
 const cart = computed(() => {
-	return store.state.cart
-})
+	return store.state.cart;
+});
+
 const productsInCart = computed(() => {
-	return store.state.cart.length
-})
-const emit = defineEmits(["close-cart"])
+	return store.state.cart.length;
+});
+
+const discountPrice = (discount, price) => {
+	return DISCOUNT_CALCULATE(discount, price);
+};
+
+const multiplePriceByQuantity = (discount, price, qty) => {
+	return DISCOUNT_CALCULATE(discount, price) * qty;
+};
+
+const totalPrice = computed(() => {
+	return store.state.totalPrice;
+});
+
+const emit = defineEmits(["close-cart"]);
+
 const closeCart = () => {
-	emit("close-cart")
-}
+	emit("close-cart");
+};
 </script>
 <style scoped lang="scss">
 .cart-tooltip {
@@ -107,7 +121,7 @@ const closeCart = () => {
 	box-sizing: border-box;
 	position: absolute;
 	min-height: 180px;
-	padding: 1rem;
+	padding: 1rem 1rem 2rem 1rem;
 	width: 350px;
 	right: 0;
 	top: calc(180px / 2 - 20px);
@@ -122,6 +136,10 @@ const closeCart = () => {
 	&__product {
 		display: flex;
 		align-items: center;
+
+		&:nth-child(even) {
+			background: rgba($c-black, 0.03);
+		}
 	}
 	&__info {
 		font-size: 18px;
@@ -144,6 +162,11 @@ const closeCart = () => {
 		&:hover .cart-tooltip__close--icon-color {
 			fill: $c-accent;
 		}
+	}
+	&__total-price {
+		text-align: center;
+		padding: 1rem;
+		font-weight: bold;
 	}
 }
 .product-container {
