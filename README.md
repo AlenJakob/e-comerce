@@ -2,7 +2,7 @@
 # SNEAKERS SHOE_COMMERCE
 
 ## DEMO
-# [See DEMO]([https://www.google.com](https://ecomerce-shoes.web.app/collections))
+# [SEE DEMO](https://ecomerce-shoes.web.app/collections)
 
 
 
