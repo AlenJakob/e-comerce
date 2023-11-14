@@ -21,10 +21,7 @@
               {{ item.quantity }}
             </li>
             <li
-              class="
-                product-details__list-item
-                product-details__list-item--bold-price
-              "
+              class="product-details__list-item product-details__list-item--bold-price"
             >
               ${{ (item.price / 2) * item.quantity }}
             </li>
